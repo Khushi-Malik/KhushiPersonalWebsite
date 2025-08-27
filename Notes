@@ -1,0 +1,14 @@
+- Frameworks
+    * React
+    * Vite
+    * Tailwind
+    * CSS
+    * Javascript
+    * Threejs
+        *   fiber
+        *   drei
+
+
+- Notes
+    * Have Tailwind 3.4 with Vite
+        * Learn how to integrate it 
