@@ -53,7 +53,7 @@ const Home = () => {
             screenPosition= [-0.5, 0.5, 0.5]
         } else {
             screenScale = [0.003, 0.003, 0.003],
-            screenPosition= [-5, 2, 1]
+            screenPosition= [-0.5, 0.5, 0.5]
         }
         return [screenScale, screenPosition, pegasusRotation]
     }
