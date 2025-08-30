@@ -4,27 +4,12 @@ import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 import Island from '../models/island'
 import Pegasus from '../models/pegasus'
-
+import HomeInfo from '../components/HomeInfo'
 
 const Home = () => {
 
     const [isRotating, setisRotating] = useState(false)
     const [currentStage, setCurrentStage] = useState(1)
-
-    // const adjustPegasusForScreenSize = () => {
-    //     let screenScale, screenPosition;
-    //     let pegasusRotation= [0, Math.PI / 2, 0]
-
-    //     if (window.innerWidth < 768) { 
-    //         // Small screens (e.g., mobile devices)
-    //         screenScale = [1.5, 1.5, 1.5],
-    //         screenPosition= [-0, -1.5, 0]
-    //     } else {
-    //         screenScale = [3, 3, 3],
-    //         screenPosition= [0, -4, -4]
-    //     }
-    //     return [screenScale, screenPosition, pegasusRotation]
-    // }
 
     const adjustIslandForScreenSize = () => {
         let screenScale=null;
@@ -35,7 +20,7 @@ const Home = () => {
             // Small screens (e.g., mobile devices)
             screenScale = [0.9, 0.9, 0.9];
         } else {
-            screenScale = [1, 1, 1];
+            screenScale = [1.125, 1.125, 1.125];
         }
         return [screenScale, screenPosition, islandRotation]
     }
@@ -49,10 +34,10 @@ const Home = () => {
 
         if (window.innerWidth < 768) { 
             // Small screens (e.g., mobile devices)
-            screenScale = [0.003, 0.003, 0.003],
+            screenScale = [0.005, 0.005, 0.005],
             screenPosition= [-0.5, 0.5, 0.5]
         } else {
-            screenScale = [0.003, 0.003, 0.003],
+            screenScale = [0.005, 0.005, 0.005],
             screenPosition= [-0.5, 0.5, 0.5]
         }
         return [screenScale, screenPosition, pegasusRotation]
@@ -64,7 +49,7 @@ const Home = () => {
     <section className = 'w-full h-screen relative'>
         <div className='absolute top-28 left-0 right-0 z-10 flex items-center 
         justify-center'>
-            POPUP
+            {currentStage && <HomeInfo currentStage={currentStage}/>}
         </div>
 
         {/* ALL 3D STUFF */}
@@ -76,8 +61,8 @@ const Home = () => {
                 {/* 3D Lighting */}
                 <directionalLight position={[1,1,1]} intensity={1.5}/> 
                 <ambientLight  intensity={0.5}/>
-                <pointLight />
-                <spotLight />
+                {/* <pointLight />
+                <spotLight /> */}
                 <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
 
                 <Pegasus 
@@ -86,6 +71,7 @@ const Home = () => {
                     rotation={pegasusRotation}
                     isRotating={isRotating}
                     setisRotating={setisRotating}   
+                    landingTarget={islandPosition}
                 />
 
                 <Island 

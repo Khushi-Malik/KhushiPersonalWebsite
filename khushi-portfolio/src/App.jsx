@@ -1,7 +1,7 @@
 // import './App.css'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import {Home, About, Projects, Contact} from './pages';
+import {Home, About, Projects, Contact, Blog} from './pages';
 
 const App = () => {
   console.log("Rendering App component");
@@ -14,6 +14,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/projects' element={<Projects />} />
+          <Route path='/blog' element={<Blog />} />
         </Routes>
       </Router>
      </main>

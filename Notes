@@ -8,6 +8,8 @@
         *   fiber
         *   drei
 
+    * EmailJS -- better system
+
 
 - Notes
     * Have Tailwind 3.4 with Vite
@@ -17,3 +19,8 @@
 
 - TODO
     * I need to add more events for navigating the island
+    * Make the textboxes smaller and change design
+    * Pegasus Animation
+    * Add mini-me's or something like that
+    * Add Autorotate and something with scroll, the pegasus and fly with the exploring
+    * Change how I am sending an email in Contact page.
