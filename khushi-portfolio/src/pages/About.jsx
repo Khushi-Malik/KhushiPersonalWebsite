@@ -64,19 +64,16 @@ const About = () => {
         <h3 className='subhead-text'>Experience</h3>
         
         {/* Tab Navigation */}
-        <div className="flex flex-wrap gap-8 mt-6 mb-8 border-b border-slate-200">
+        <div className="flex justify-between mt-6 mb-8 border-b border-slate-200">
           {Object.entries(experienceData).map(([key, exp]) => (
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`px-4 py-2 text-sm font-medium text-center rounded-t-lg transition-colors duration-200 ${
+              className={`flex-1 px-4 py-2 text-sm font-medium text-center rounded-t-lg transition-colors duration-200 ${
                 activeTab === key
                   ? 'bg-blue-500 text-white border-b-2 border-blue-500'
                   : 'text-slate-600 hover:text-slate-800 hover:bg-slate-100'
-              }`}
-            >
-              {/* <span className="mr-2">{exp.icon}</span> */}
-              {exp.title}
+              }`}> {exp.title}
             </button>
           ))}
         </div>

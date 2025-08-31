@@ -75,14 +75,14 @@ export const WorkExperiences = [
     {
         title: "Machine Learning Intern",
         company_name: "Human Feedback Foundation + The Linux Foundation",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "January 2025 - April 2025",
         points: [
             "Developed an ML-powered framework to fingerprint LLMs using prompt engineering and evaluation harnesses.",
             "Implemented algorithms to classify features with high precision and generate persistent IDs for identified models",
             "Collaborated with a team of researchers to refine the framework and improve its accuracy.",
-            "Achienved 87% accuracy in model identification across various LLMs.",
+            "Achieved 87% accuracy in model identification across various LLMs.",
             "Presented findings to stakeholders and contributed to the foundation's research initiatives."
         ],
     },  
@@ -139,7 +139,7 @@ export const VolunteeringExperiences = [
     {
         title: "Awareness Associate",
         company_name: "Mental Health Student Association - University of Toronto",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "September 2024 - April 2025",
         points: [
@@ -147,24 +147,24 @@ export const VolunteeringExperiences = [
     },
     {
         title: "Volunteer",
-        company_name: "Care and Compassion Pet Shelter",
-        icon: twitter,
+        company_name: "Sunrise Learning School for Special Children",
+        // icon: twitter,
         iconBg: "#accbe1",
-        date: "September 2024 - April 2025",
+        date: "August 2021 - Novemeber 2022",
         points: [
-            "Gained experience in responsibility and empathy by spreading awareness for animal welfare through poster creation and community outreach.",
-            "Collaborated with a diverse team of volunteers, enhancing teamwork and interpersonal skills."
+            	"Fostered inclusivity by actively participating in creating an environment that respects and supports individual differences.",
+                "Developed patience, adaptability, and effective communication skills by setting up classrooms"
         ],
     },
     {
         title: "Volunteer",
-        company_name: "Sunrise Learning School for Special Children",
-        icon: twitter,
+        company_name: "Care and Compassion Pet Shelter",
+        // icon: twitter,
         iconBg: "#accbe1",
-        date: "September 2024 - April 2025",
+        date: "May 2021 - August 2021",
         points: [
-            	"Fostered inclusivity by actively participating in creating an environment that respects and supports individual differences.",
-                "Developed patience, adaptability, and effective communication skills by setting up classrooms"
+            "Gained experience in responsibility and empathy by spreading awareness for animal welfare through poster creation and community outreach.",
+            "Collaborated with a diverse team of volunteers, enhancing teamwork and interpersonal skills."
         ],
     },
 ];
