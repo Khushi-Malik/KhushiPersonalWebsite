@@ -24,6 +24,7 @@ const Pegasus = ( {isRotating, ...props} ) => { // removed isRotating
 
     // Optional: Play an animation on mount
     useEffect(() => {
+        console.log(actions);
         if (actions && names.length > 0) {
         actions[names[0]]?.play()
         }

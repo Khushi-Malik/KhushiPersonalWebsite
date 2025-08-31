@@ -26,7 +26,15 @@ const Contact = () => {
   const handleFocus = () => setCurrentAnimation('Walking');
 
 
-  const handleBlur = () => setCurrentAnimation('Idle');
+  // const handleBlur = () => setCurrentAnimation('Idle');
+  const handleBlur = () => {
+    const random = Math.random();
+    
+    // 50% chance of idle, 50% chance of dance
+    const animation = random < 0.5 ? 'Idle' : 'Dance';
+    
+    setCurrentAnimation(animation);
+  };
 
   
   const handleSubmit = (e) => {
