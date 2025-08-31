@@ -5,33 +5,7 @@ import {
     twitter
 } from "../assets/icons";
 
-export const experiences = [
-    // {
-    //     title: "React.js Developer",
-    //     company_name: "Starbucks",
-    //     // icon: starbucks,
-    //     iconBg: "#accbe1",
-    //     date: "March 2020 - April 2021",
-    //     points: [
-    //         "Developing and maintaining web applications using React.js and other related technologies.",
-    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-    //         "Implementing responsive design and ensuring cross-browser compatibility.",
-    //         "Participating in code reviews and providing constructive feedback to other developers.",
-    //     ],
-    // }
-    {
-        title: "Teaching Assistant - CSC108",
-        company_name: "University of Toronto",
-        icon: twitter,
-        iconBg: "#accbe1",
-        date: "September 2025 - December 2025, September 2024 - December 2024",
-        points: [
-            "Assisted in teaching undergraduate intrductory course in Computer Science.",
-            "Held office hours to support students with coursework and assignments.",
-            "Graded assignments and provided feedback to help students improve their understanding of the material.",
-            "Collaborated with professors to develop course materials and improve the learning experience."
-        ],
-    },
+export const ResearchExperiences = [
     {
          title: "Machine Learning - Research Student",
         company_name: "University of Toronto",
@@ -40,20 +14,6 @@ export const experiences = [
         date: "April 2025 - September 2025",
         points: [
             "Lisa"],
-    },
-    {
-        title: "Machine Learning Intern",
-        company_name: "Human Feedback Foundation + The Linux Foundation",
-        icon: twitter,
-        iconBg: "#accbe1",
-        date: "January 2025 - April 2025",
-        points: [
-            "Developed an ML-powered framework to fingerprint LLMs using prompt engineering and evaluation harnesses.",
-            "Implemented algorithms to classify features with high precision and generate persistent IDs for identified models",
-            "Collaborated with a team of researchers to refine the framework and improve its accuracy.",
-            "Achienved 87% accuracy in model identification across various LLMs.",
-            "Presented findings to stakeholders and contributed to the foundation's research initiatives."
-        ],
     },
     {
          title: "Research Student",
@@ -82,6 +42,50 @@ export const experiences = [
         points: [
             "Tingting"],
     }
+
+];
+
+export const WorkExperiences = [
+    // {
+    //     title: "React.js Developer",
+    //     company_name: "Starbucks",
+    //     // icon: starbucks,
+    //     iconBg: "#accbe1",
+    //     date: "March 2020 - April 2021",
+    //     points: [
+    //         "Developing and maintaining web applications using React.js and other related technologies.",
+    //         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+    //         "Implementing responsive design and ensuring cross-browser compatibility.",
+    //         "Participating in code reviews and providing constructive feedback to other developers.",
+    //     ],
+    // }
+    {
+        title: "Teaching Assistant - CSC108",
+        company_name: "University of Toronto",
+        icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2025 - December 2025, September 2024 - December 2024",
+        points: [
+            "Assisted in teaching undergraduate intrductory course in Computer Science.",
+            "Held office hours to support students with coursework and assignments.",
+            "Graded assignments and provided feedback to help students improve their understanding of the material.",
+            "Collaborated with professors to develop course materials and improve the learning experience."
+        ],
+    },
+    {
+        title: "Machine Learning Intern",
+        company_name: "Human Feedback Foundation + The Linux Foundation",
+        icon: twitter,
+        iconBg: "#accbe1",
+        date: "January 2025 - April 2025",
+        points: [
+            "Developed an ML-powered framework to fingerprint LLMs using prompt engineering and evaluation harnesses.",
+            "Implemented algorithms to classify features with high precision and generate persistent IDs for identified models",
+            "Collaborated with a team of researchers to refine the framework and improve its accuracy.",
+            "Achienved 87% accuracy in model identification across various LLMs.",
+            "Presented findings to stakeholders and contributed to the foundation's research initiatives."
+        ],
+    },  
 ];
 
 export const socialLinks = [
@@ -110,4 +114,57 @@ export const projects = [
         // description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
         // link: 'https://github.com/adrianhajdin/pricewise',
     }
+];
+
+
+export const VolunteeringExperiences = [
+    {
+        title: "ML Project Lead",
+        company_name: "UTMist - University of Toronto",
+        icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2025 - present",
+        points: [
+            "FixMyElo"],
+    },
+    {
+        title: "ProjectX Lead",
+        company_name: "UofTAI - University of Toronto",
+        icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2024 - April 2025",
+        points: [
+            "ProjectX"],
+    },
+    {
+        title: "Awareness Associate",
+        company_name: "Mental Health Student Association - University of Toronto",
+        icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2024 - April 2025",
+        points: [
+            "Volunteered in various causes like fund-raising, panel events, etc to help raise awareness for mental well-being."],
+    },
+    {
+        title: "Volunteer",
+        company_name: "Care and Compassion Pet Shelter",
+        icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2024 - April 2025",
+        points: [
+            "Gained experience in responsibility and empathy by spreading awareness for animal welfare through poster creation and community outreach.",
+            "Collaborated with a diverse team of volunteers, enhancing teamwork and interpersonal skills."
+        ],
+    },
+    {
+        title: "Volunteer",
+        company_name: "Sunrise Learning School for Special Children",
+        icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2024 - April 2025",
+        points: [
+            	"Fostered inclusivity by actively participating in creating an environment that respects and supports individual differences.",
+                "Developed patience, adaptability, and effective communication skills by setting up classrooms"
+        ],
+    },
 ];
