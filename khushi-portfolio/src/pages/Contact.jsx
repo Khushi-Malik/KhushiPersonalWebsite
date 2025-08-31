@@ -30,8 +30,14 @@ const Contact = () => {
   const handleBlur = () => {
     const random = Math.random();
     
-    // 50% chance of idle, 50% chance of dance
-    const animation = random < 0.5 ? 'Idle' : 'Dance';
+    let animation;
+    if (random < 0.33) {
+      animation = 'Idle';
+    } else if (random < 0.66) {
+      animation = 'Jump';
+    } else {
+      animation = 'Dance';
+    }
     
     setCurrentAnimation(animation);
   };
