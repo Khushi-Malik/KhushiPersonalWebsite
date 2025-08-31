@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import Social from "./Social"
 
 const Navbar = () => {
   return (
@@ -18,12 +19,18 @@ const Navbar = () => {
             </NavLink>
             <NavLink to="/blog" className={ ({isActive}) => isActive ? 
             'text-blue-500' : 'text-black'}>
-                Blog
+                Blogs
             </NavLink>
-            <NavLink to="/contact" className={ ({isActive}) => isActive ? 
+            {/* <NavLink to="/contact" className={ ({isActive}) => isActive ? 
             'text-blue-500' : 'text-black'}>
                 Contact
+            </NavLink> */}
+            <NavLink to="/achievement" className={ ({isActive}) => isActive ? 
+            'text-blue-500' : 'text-black'}>
+                Achievement
             </NavLink>
+            <Social />
+
 
         </nav>
     </header>

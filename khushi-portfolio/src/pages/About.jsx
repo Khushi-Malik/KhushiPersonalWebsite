@@ -26,7 +26,7 @@ const About = () => {
   };
 
   return (
-    <section className='max-container'>
+    <section className='max-container text-center'>
       <h1 className="head-text">
         🦋 Hello, I'm <span>Khushi!</span> 🦋
       </h1>
