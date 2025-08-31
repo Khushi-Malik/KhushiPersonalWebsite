@@ -1,62 +1,36 @@
-import React from 'react'
+import React from 'react';
+import skills from '../assets/images/skills';
+import { experiences } from '../constants';
+import InteractiveTimeline from '../components/InteractiveTimeline';
 
 const About = () => {
-
-  const skills = [
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", alt: "Python" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", alt: "Java" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg", alt: "C" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg", alt: "Swift" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", alt: "CSS" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", alt: "TailwindCSS" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", alt: "Next.js" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg", alt: "LaTeX" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", alt: "Jupyter" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", alt: "NumPy" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", alt: "Pandas" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg", alt: "Flask" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg", alt: "Matplotlib" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg", alt: "PyTorch" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg", alt: "TensorFlow" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", alt: "MySQL" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", alt: "PostgreSQL" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg", alt: "Arduino" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", alt: "Postman" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", alt: "Docker" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", alt: "VS Code" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg", alt: "Xcode" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg", alt: "IntelliJ" },
-  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", alt: "Figma" },
-]
-
   return (
     <section className='max-container'>
-
       <h1 className="head-text">
         🦋 Hello, I'm <span>Khushi!</span> 🦋
       </h1>
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
           I am a Computer Science and Mathematics student at the University of Toronto.
-          <br /> <br /> 
-          I’m passionate about learning, problem-solving, and exploring technology through research and hands-on experiences. My interests include data science, algorithms, machine learning, software development, cybersecurity, and CS Education. 
-          <br /> <br /> 
+          <br /><br />
+          I'm passionate about learning, problem-solving, and exploring technology through research and hands-on experiences. My interests include data science, algorithms, machine learning, software development, cybersecurity, and CS Education.
+          <br /><br />
           I aspire to build impactful and reliable applications and AI models that make a difference in people's lives.
-          </p>
+        </p>
       </div>
 
       <div className='py-10 flex flex-col'>
         <h3 className='subhead-text'>My Skills</h3>
 
         <div className='mt-16 flex flex-wrap gap-12'>
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-10 gap-2 place-items-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-2 md:gap-2 place-items-center w-full">
             {skills.map((skill, index) => (
               <div key={index} className="flex flex-col items-center group transition-transform hover:scale-110">
-                <img src={skill.src} alt={skill.alt} width="40" height="40" className="drop-shadow-md" />
+                <img
+                  src={skill.src}
+                  alt={skill.alt}
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 drop-shadow-md"
+                />
                 <span className="text-xs text-slate-500 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   {skill.alt}
                 </span>
@@ -68,15 +42,68 @@ const About = () => {
 
       <div className='py-10 flex flex-col'>
         <h3 className='subhead-text'>Work Experience</h3>
-
-        <div className='mt-12 flex'>
-          
+        {/* <div className='mt-12'> */}
+          <div className="relative">
+            <InteractiveTimeline experiences={experiences} />
+          </div>
         </div>
-        
-      </div>
-     
-    </section>
-  )
-}
+      {/* </div> */}
 
-export default About
+    </section>
+  );
+};
+
+export default About;
+
+
+
+//  {/* Timeline line */}
+//             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-600"></div>
+            
+//               {experiences.map((experience, index) => (
+//               <div key={index} className="relative flex items-start mb-12 last:mb-0">
+//                 {/* Timeline dot/icon */}
+//                 <div className="flex-shrink-0 w-16 h-16 bg-white rounded-full border-4 border-blue-400 flex items-center justify-center shadow-lg z-10">
+//                   {experience.icon ? (
+//                     <img
+//                       src={experience.icon}
+//                       alt={experience.company_name}
+//                       className="w-8 h-8 object-contain"
+//                     />
+//                   ) : (
+//                     <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+//                   )}
+//                 </div>
+
+//                 {/* Content */}
+//                 <div className="ml-8 flex-1">
+//                   <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+//                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+//                       <div>
+//                         <h3 className="text-xl font-bold text-gray-800 mb-1">
+//                           {experience.title}
+//                         </h3>
+//                         <p className="text-blue-600 font-medium">
+//                           {experience.company_name}
+//                         </p>
+//                       </div>
+//                       <span className="text-sm text-gray-500 mt-2 sm:mt-0 px-3 py-1 bg-gray-100 rounded-full">
+//                         {experience.date}
+//                       </span>
+//                     </div>
+
+//                     {experience.points && (
+//                       <ul className="space-y-2">
+//                         {experience.points.map((point, pointIndex) => (
+//                           <li key={pointIndex} className="text-gray-600 flex items-start">
+//                             <span className="text-blue-400 mr-3 mt-1.5 flex-shrink-0">•</span>
+//                             <span className="text-sm leading-relaxed">{point}</span>
+//                           </li>
+//                         ))}
+//                       </ul>
+//                     )}
+//                   </div>
+//                 </div>
+//               </div>
+//             ))}
+
