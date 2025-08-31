@@ -106,14 +106,91 @@ export const socialLinks = [
     }
 ];
 
-export const projects = [
+export const MyProjects = [
     {
-        // iconUrl: pricewise,
-        // theme: 'btn-back-red',
-        // name: 'Amazon Price Tracker',
-        // description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        // link: 'https://github.com/adrianhajdin/pricewise',
-    }
+        iconURL: null,
+        name: 'FixMyElo',
+        description: 'Chess engine that explains its moves in natural language, helping players understand and improve their game.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['AI/ML', 'Chess', 'NLP'],
+        category: 'AI'
+    },
+    {
+        iconURL: null,
+        name: 'CurAItor',
+        description: 'WINNER OF GENAI: A WebApp that uses AI to generate personalized art tours in a 3d museum based on user preferences.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['AI', '3D', 'Web', 'Award Winner'],
+        category: 'AI',
+        isWinner: true
+    },
+    {
+        iconURL: null,
+        name: 'HabitBreaker.',
+        description: 'An iOS app that helps users break bad habits through personalized strategies and progress tracking.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['iOS', 'Mobile', 'Health'],
+        category: 'Mobile'
+    },
+    {
+        iconURL: null,
+        name: 'Deerography',
+        description: 'A WebApp that help users discover geography facts about countries around the world through interactive quizzes and games.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['Web', 'Education', 'Games'],
+        category: 'Web'
+    },
+    {
+        iconURL: null,
+        name: 'WellRise',
+        description: 'A 3d printer touch sensor clock and web application that help users track their sleep patterns and provides personalized recommendations for improving sleep quality.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['IoT', '3D Printing', 'Health', 'Web'],
+        category: 'Hardware'
+    },
+];
+
+export const SchoolProjects = [
+    {
+        iconURL: null,
+        name: 'MyShell',
+        description: 'A robust custom shell implemented in C that supports everyday commands, piping, I/O redirection, background processes, signal handling, and networking.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['C', 'Systems', 'Shell'],
+        category: 'Systems'
+    },
+    {
+        iconURL: null,
+        name: 'ML Predictor',
+        description: 'A machine learning model that predicts the likelihood of a a dish being sushi, pizza, or shwarma based on real data obtained from human surveys.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['ML', 'Python', 'Data Science'],
+        category: 'AI'
+    },
+    {
+        iconURL: null,
+        name: 'MyPaint AI',
+        description: 'A java-based paint application with features like brush selection, color palette, and image saving with AI integration for image generation.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['Java', 'GUI', 'AI'],
+        category: 'Desktop'
+    },
+    {
+        iconURL: null,
+        name: 'Othello',
+        description: 'A fully functional Java Othello game with a GUI, allowing two players to compete, featuring move validation, score tracking, and game-over detection.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['Java', 'GUI', 'Game'],
+        category: 'Games'
+    },
+    {
+        iconURL: null,
+        name: 'Directory- Memory Visualizer',
+        description: 'A python program that visualizes the memory allocation of directories and files, providing insights into storage usage and organization.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['Python', 'Visualization', 'Systems'],
+        category: 'Tools'
+    },
 ];
 
 

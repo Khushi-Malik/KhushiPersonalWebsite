@@ -13,121 +13,121 @@ function InteractiveTimeline(props) {
 
   // Rainbow color schemes for each experience
   const colorSchemes = [
+    // {
+    //   gradient: 'from-purple-50 to-pink-50',
+    //   border: 'border-purple-200',
+    //   hover: 'hover:to-purple-100 hover:from-pink-100',
+    //   accent: 'purple',
+    //   dot: 'to-purple-500 from-pink-600',
+    //   dotInner: 'to-purple-400 from-pink-500'
+    // },
+    // {
+    //   gradient: 'to-violet-50 from-purple-50',
+    //   border: 'border-violet-200',
+    //   hover: 'hover:to-violet-100 hover:from-purple-100',
+    //   accent: 'violet',
+    //   dot: 'to-violet-500 from-purple-600',
+    //   dotInner: 'to-violet-400 from-purple-500'
+    // },
     {
-      gradient: 'from-red-50 to-pink-50',
-      border: 'border-red-200',
-      hover: 'hover:from-red-100 hover:to-pink-100',
-      accent: 'red',
-      dot: 'from-red-500 to-pink-600',
-      dotInner: 'from-red-400 to-pink-500'
-    },
-    {
-      gradient: 'from-orange-50 to-yellow-50',
-      border: 'border-orange-200',
-      hover: 'hover:from-orange-100 hover:to-yellow-100',
-      accent: 'orange',
-      dot: 'from-orange-500 to-yellow-600',
-      dotInner: 'from-orange-400 to-yellow-500'
-    },
-    {
-      gradient: 'from-yellow-50 to-lime-50',
-      border: 'border-yellow-200',
-      hover: 'hover:from-yellow-100 hover:to-lime-100',
-      accent: 'yellow',
-      dot: 'from-yellow-500 to-lime-600',
-      dotInner: 'from-yellow-400 to-lime-500'
-    },
-    {
-      gradient: 'from-green-50 to-emerald-50',
-      border: 'border-green-200',
-      hover: 'hover:from-green-100 hover:to-emerald-100',
-      accent: 'green',
-      dot: 'from-green-500 to-emerald-600',
-      dotInner: 'from-green-400 to-emerald-500'
-    },
-    {
-      gradient: 'from-cyan-50 to-blue-50',
-      border: 'border-cyan-200',
-      hover: 'hover:from-cyan-100 hover:to-blue-100',
-      accent: 'cyan',
-      dot: 'from-cyan-500 to-blue-600',
-      dotInner: 'from-cyan-400 to-blue-500'
-    },
-    {
-      gradient: 'from-blue-50 to-indigo-50',
+      gradient: 'to-blue-50 from-indigo-50',
       border: 'border-blue-200',
-      hover: 'hover:from-blue-100 hover:to-indigo-100',
+      hover: 'hover:to-blue-100 hover:from-indigo-100',
       accent: 'blue',
-      dot: 'from-blue-500 to-indigo-600',
-      dotInner: 'from-blue-400 to-indigo-500'
+      dot: 'to-blue-500 from-indigo-600',
+      dotInner: 'to-blue-400 from-indigo-500'
     },
     {
-      gradient: 'from-violet-50 to-purple-50',
-      border: 'border-violet-200',
-      hover: 'hover:from-violet-100 hover:to-purple-100',
-      accent: 'violet',
-      dot: 'from-violet-500 to-purple-600',
-      dotInner: 'from-violet-400 to-purple-500'
+      gradient: 'to-cyan-50 from-blue-50',
+      border: 'border-cyan-200',
+      hover: 'hover:to-cyan-100 hover:from-blue-100',
+      accent: 'cyan',
+      dot: 'to-cyan-500 from-blue-600',
+      dotInner: 'to-cyan-400 from-blue-500'
     },
     {
-      gradient: 'from-purple-50 to-pink-50',
-      border: 'border-purple-200',
-      hover: 'hover:from-purple-100 hover:to-pink-100',
-      accent: 'purple',
-      dot: 'from-purple-500 to-pink-600',
-      dotInner: 'from-purple-400 to-pink-500'
+      gradient: 'to-green-50 from-emerald-50',
+      border: 'border-green-200',
+      hover: 'hover:to-green-100 hover:from-emerald-100',
+      accent: 'green',
+      dot: 'to-green-500 from-emerald-600',
+      dotInner: 'to-green-400 from-emerald-500'
+    },
+    {
+      gradient: 'to-yellow-50 from-lime-50',
+      border: 'border-yellow-200',
+      hover: 'hover:to-yellow-100 hover:from-lime-100',
+      accent: 'yellow',
+      dot: 'to-yellow-500 from-lime-600',
+      dotInner: 'to-yellow-400 from-lime-500'
+    },
+    {
+      gradient: 'to-orange-50 from-yellow-50',
+      border: 'border-orange-200',
+      hover: 'hover:to-orange-100 hover:from-yellow-100',
+      accent: 'orange',
+      dot: 'to-orange-500 from-yellow-600',
+      dotInner: 'to-orange-400 from-yellow-500'
+    },
+    {
+      gradient: 'to-red-50 from-pink-50',
+      border: 'border-red-200',
+      hover: 'hover:to-red-100 hover:from-pink-100',
+      accent: 'red',
+      dot: 'to-red-500 from-pink-600',
+      dotInner: 'to-red-400 from-pink-500'
     }
   ];
 
   function getAccentColors(accent, isActive) {
     const colors = {
-      red: {
-        text: isActive ? 'text-red-700' : 'text-red-600',
-        bg: isActive ? 'bg-red-100' : 'bg-red-50',
-        ring: 'ring-red-400',
-        bullet: isActive ? 'bg-red-600' : 'bg-red-500'
-      },
-      orange: {
-        text: isActive ? 'text-orange-700' : 'text-orange-600',
-        bg: isActive ? 'bg-orange-100' : 'bg-orange-50',
-        ring: 'ring-orange-400',
-        bullet: isActive ? 'bg-orange-600' : 'bg-orange-500'
-      },
-      yellow: {
-        text: isActive ? 'text-yellow-700' : 'text-yellow-600',
-        bg: isActive ? 'bg-yellow-100' : 'bg-yellow-50',
-        ring: 'ring-yellow-400',
-        bullet: isActive ? 'bg-yellow-600' : 'bg-yellow-500'
-      },
-      green: {
-        text: isActive ? 'text-green-700' : 'text-green-600',
-        bg: isActive ? 'bg-green-100' : 'bg-green-50',
-        ring: 'ring-green-400',
-        bullet: isActive ? 'bg-green-600' : 'bg-green-500'
-      },
-      cyan: {
-        text: isActive ? 'text-cyan-700' : 'text-cyan-600',
-        bg: isActive ? 'bg-cyan-100' : 'bg-cyan-50',
-        ring: 'ring-cyan-400',
-        bullet: isActive ? 'bg-cyan-600' : 'bg-cyan-500'
-      },
-      blue: {
-        text: isActive ? 'text-blue-700' : 'text-blue-600',
-        bg: isActive ? 'bg-blue-100' : 'bg-blue-50',
-        ring: 'ring-blue-400',
-        bullet: isActive ? 'bg-blue-600' : 'bg-blue-500'
+      purple: {
+        text: isActive ? 'text-purple-600':'text-purple-700',
+        bg: isActive ? 'bg-purple-50': 'bg-purple-100' ,
+        ring: 'ring-purple-400',
+        bullet: isActive ? 'bg-purple-500': 'bg-purple-600'
       },
       violet: {
-        text: isActive ? 'text-violet-700' : 'text-violet-600',
-        bg: isActive ? 'bg-violet-100' : 'bg-violet-50',
+        text: isActive ? 'text-violet-600':'text-violet-700',
+        bg: isActive ? 'bg-violet-50':'bg-violet-100',
         ring: 'ring-violet-400',
-        bullet: isActive ? 'bg-violet-600' : 'bg-violet-500'
+        bullet: isActive ? 'bg-violet-500':'bg-violet-600'
       },
-      purple: {
-        text: isActive ? 'text-purple-700' : 'text-purple-600',
-        bg: isActive ? 'bg-purple-100' : 'bg-purple-50',
-        ring: 'ring-purple-400',
-        bullet: isActive ? 'bg-purple-600' : 'bg-purple-500'
+      blue: {
+        text: isActive ? 'text-blue-600':'text-blue-700',
+        bg: isActive ? 'bg-blue-50':'bg-blue-100',
+        ring: 'ring-blue-400',
+        bullet: isActive ? 'bg-blue-500':'bg-blue-600' 
+      },
+      cyan: {
+        text: isActive ? 'text-cyan-600':'text-cyan-700',
+        bg: isActive ? 'bg-cyan-50':'bg-cyan-100',
+        ring: 'ring-cyan-400',
+        bullet: isActive ? 'bg-cyan-500':'bg-cyan-600'
+      },
+      green: {
+        text: isActive ? 'text-green-600':'text-green-700',
+        bg: isActive ? 'bg-green-50':'bg-green-100',
+        ring: 'ring-green-400',
+        bullet: isActive ? 'bg-green-500':'bg-green-600'
+      },
+      yellow: {
+        text: isActive ? 'text-yellow-600':'text-yellow-700',
+        bg: isActive ? 'bg-yellow-50':'bg-yellow-100',
+        ring: 'ring-yellow-400',
+        bullet: isActive ? 'bg-yellow-500':'bg-yellow-600'
+      },
+      orange: {
+        text: isActive ? 'text-orange-600':'text-orange-700',
+        bg: isActive ? 'bg-orange-50':'bg-orange-100',
+        ring: 'ring-orange-400',
+        bullet: isActive ? 'bg-orange-500':'bg-orange-600'
+      },
+      red: {
+        text: isActive ? 'text-red-600':'text-red-700',
+        bg: isActive ?  'bg-red-50':'bg-red-100',
+        ring: 'ring-red-400',
+        bullet: isActive ? 'bg-red-500':'bg-red-600'
       }
     };
     return colors[accent] || colors.blue;
@@ -242,7 +242,7 @@ function InteractiveTimeline(props) {
               isMobile
                 ? ''
                 : `md:w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`
-            } text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-2xl`}
+            } text-left focus:outline-none focus:ring-opacity-70 rounded-2xl`}
             onClick={function() { toggleExpanded(index); }}
             aria-expanded={expandedItem === index || clickedItem === index}
             aria-label={`Toggle details for ${experience.title || 'experience'}`}

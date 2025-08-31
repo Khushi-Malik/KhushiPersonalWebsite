@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import skills from '../assets/images/skills';
 import { ResearchExperiences, WorkExperiences, VolunteeringExperiences } from '../constants';
 import InteractiveTimeline from '../components/InteractiveTimeline';
+import CTA from '../components/CTA';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('work');
@@ -71,7 +72,7 @@ const About = () => {
               onClick={() => setActiveTab(key)}
               className={`flex-1 px-4 py-2 text-sm font-medium text-center rounded-t-lg transition-colors duration-200 ${
                 activeTab === key
-                  ? 'bg-blue-500 text-white border-b-2 border-blue-500'
+                  ? 'bg-[#6FE3F0] text-slate-700 border-b-2 border-[#6FE3F0]'
                   : 'text-slate-600 hover:text-slate-800 hover:bg-slate-100'
               }`}> {exp.title}
             </button>
@@ -85,6 +86,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <CTA />
     </section>
   );
 };

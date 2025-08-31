@@ -6,7 +6,7 @@ import {Home, About, Projects, Contact, Blog} from './pages';
 const App = () => {
   console.log("Rendering App component");
   return (
-     <main className='bg-slate-300/20'> 
+     <main className='bg-slate-300/20 min-h-screen'> 
       <Router>
         <Navbar />
         <Routes>
