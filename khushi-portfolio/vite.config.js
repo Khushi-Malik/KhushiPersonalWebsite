@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb'],
-  base: process.env.VITE_BASE_URL || '/react-vite-deploy',
-})
+  base: process.env.VITE_BASE_PATH || '/react-vite-deploy',
+});
