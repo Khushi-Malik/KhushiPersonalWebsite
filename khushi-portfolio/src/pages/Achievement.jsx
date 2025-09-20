@@ -172,14 +172,6 @@ const Achievement = () => {
                       {achievement.category}
                     </span>
                   </div>
-
-                  {/* Hover effect dot - similar to your timeline */}
-                  <div className={`absolute -top-2 -right-2 w-4 h-4 rounded-full transition-all duration-300 ${
-                    isHovered 
-                      ? `bg-gradient-to-r ${colorScheme.gradient.replace('from-', 'from-').replace('to-', 'to-')} border-2 border-white shadow-md scale-110` 
-                      : 'bg-white border-2 border-gray-200'
-                  }`}>
-                  </div>
                 </div>
               </div>
             );
