@@ -188,7 +188,7 @@ const Projects = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="text-center mt-16 p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl">
+      {/* <div className="text-center mt-16 p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl">
         <p className="cta-text mb-4">
           Interested in collaborating? <br className="sm:block hidden" />
           I'm always open to discussing new projects and opportunities!
@@ -196,7 +196,7 @@ const Projects = () => {
         <Link to="/contact" className="btn">
           Contact
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 };
