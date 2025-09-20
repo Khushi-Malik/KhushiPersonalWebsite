@@ -202,7 +202,6 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 .rainbow-shimmer:hover {
-  transform: translateY(-5px);  /* Simple lift like in the HTML example */
   box-shadow: 0 15px 40px rgba(0,0,0,0.3);  /* Enhanced shadow */
   animation-duration: 0.6s;  /* Fast hover animation */
 }
@@ -226,7 +225,7 @@ body:has(.card[data-color="green"]:hover) {
 .rainbow-shimmer-title:hover {
   transform: translateY(-5px);  /* Same subtle lift as boxes */
   box-shadow: 0 15px 40px rgba(0,0,0,0.3);  /* Enhanced shadow */
-  animation-duration: 10s;  /* Fast hover animation */
+  animation-duration: 1s;  /* Fast hover animation */
 }
 
 /* Complete shimmer animation - each color fully sweeps across */
@@ -323,11 +322,6 @@ body:has(.card[data-color="green"]:hover) {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.rainbow-shimmer-btn:hover {
-  background: rgba(255, 255, 255, 0.4);  /* Brighter background */
-  transform: scale(1.1);  /* Simple scale up */
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);  /* Subtle glow */
-}
 
 .info-box.rainbow-shimmer {
   animation: completeShimmer 25s linear infinite, float 25s ease-in-out infinite;  /* Slowed down both animations to match */
