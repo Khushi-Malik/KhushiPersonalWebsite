@@ -4,7 +4,7 @@ import { arrow } from '../assets/icons'
 
 const InfoBox = ({ text, link, btnText }) => (
   <div className='info-box rainbow-shimmer'>
-    <p className='font-medium sm:text-xl text-center text-white'>{text}</p>
+    <p className='font-medium sm:text-base text-sm text-center text-white'>{text}</p>
     <Link to={link} className="rainbow-shimmer-btn">
       {btnText}
       <img src={arrow} className='w-4 h-4 object-contain ml-4' />
@@ -14,9 +14,15 @@ const InfoBox = ({ text, link, btnText }) => (
 
 const renderContent = {
     1: (
-        <h1 className='sm:text-xl sm:leading-snug text-center rainbow-shimmer-title py-4 px-6 text-white mx-5 rounded-xl'>
-            Hi, I'm Khushi! <br /> A Computer Science student at University of Toronto.
-        </h1>
+        // <h1 className='sm:text-xl sm:leading-snug text-center rainbow-shimmer-title py-4 px-6 text-white mx-5 rounded-xl'>
+        <InfoBox
+        text={<>
+          Hi, I'm Khushi!
+          <br />
+          CS at U of T, curious about everything from ML to mythology.
+        </>}
+        link="https://drive.google.com/file/d/1kMLHD1mX1G5OIzuf_Ok6gdOD7OT80Ayf/view?usp=sharing" 
+        btnText="My Resume"/>
     ),
     2: (
         <InfoBox

@@ -1,15 +1,20 @@
 import {
-    contact,
     github,
     linkedin,
-    twitter
+    resume,
+    googleScholar,
+    savifinance,
+    linuxfound,
+    utmist,
+    uoft,
+    uoftai,
 } from "../assets/icons";
 
 export const ResearchExperiences = [
     {
          title: "Machine Learning - Research Student",
         company_name: "University of Toronto",
-        // icon: twitter,
+        icon: uoft,
         iconBg: "#accbe1",
         date: "April 2025 - September 2025",
         points: [
@@ -20,7 +25,7 @@ export const ResearchExperiences = [
     {
          title: "Research Student",
         company_name: "University of Toronto",
-        // icon: twitter,
+        icon: uoft,
         iconBg: "#accbe1",
         date: "April 2024 - September 2025",
         points: [
@@ -32,7 +37,7 @@ export const ResearchExperiences = [
     {
         title: "Quantitative Data Analyst",
         company_name: "University of Toronto",
-        // icon: twitter,
+        icon: uoft,
         iconBg: "#accbe1",
         date: "April 2024 - September 2024",
         points: [
@@ -44,7 +49,7 @@ export const ResearchExperiences = [
     {
         title: "Educational Content Developer- Research Student",
         company_name: "University of Toronto",
-        // icon: twitter,
+        icon: uoft,
         iconBg: "#accbe1",
         date: "April 2024 - September 2024",
         points: [
@@ -55,7 +60,7 @@ export const ResearchExperiences = [
     {
         title: "Research Student - Algorithmic Literacies in CS Education",
         company_name: "University of Toronto",
-        // icon: twitter,
+        icon: uoft,
         iconBg: "#accbe1",
         date: "April 2024 - September 2024",
         points: [
@@ -82,7 +87,7 @@ export const WorkExperiences = [
     {
         title: "Software Engineering Intern",
         company_name: "Savi Finance",
-        // icon: twitter,
+        icon: savifinance,
         iconBg: "#accbe1",
         date: "September 2025 - present",
         points: [
@@ -92,7 +97,7 @@ export const WorkExperiences = [
     {
         title: "Teaching Assistant - CSC108",
         company_name: "University of Toronto",
-        // icon: twitter,
+        icon: uoft,
         iconBg: "#accbe1",
         date: "September 2025 - December 2025, September 2024 - December 2024",
         points: [
@@ -105,7 +110,7 @@ export const WorkExperiences = [
     {
         title: "ML Technical Lead",
         company_name: "University of Toronto Machine Intelligence Student Team (UTMIST)",
-        // icon: twitter,
+        icon: utmist,
         iconBg: "#accbe1",
         date: "September 2025 - present",
         points: [
@@ -116,7 +121,7 @@ export const WorkExperiences = [
     {
         title: "AI/ML Student Researcher– Industry Project,",
         company_name: "The Linux Foundation",
-        // icon: twitter,
+        icon: linuxfound,
         iconBg: "#accbe1",
         date: "January 2025 - April 2025",
         points: [
@@ -137,6 +142,11 @@ export const socialLinks = [
     //     link: '/contact',
     // },
     {
+        name: 'Resume',
+        iconUrl: resume,
+        link: 'https://drive.google.com/file/d/1kMLHD1mX1G5OIzuf_Ok6gdOD7OT80Ayf/view?usp=sharing',
+    },
+    {
         name: 'GitHub',
         iconUrl: github,
         link: 'https://github.com/Khushi-Malik',
@@ -145,7 +155,13 @@ export const socialLinks = [
         name: 'LinkedIn',
         iconUrl: linkedin,
         link: 'https://www.linkedin.com/in/khushi-malik19/',
-    }
+    },
+    {
+        name: 'Google Scholar',
+        iconUrl: googleScholar,
+        link: 'https://scholar.google.com/citations?user=o8zvj34AAAAJ&hl=en',
+    },
+
 ];
 
 export const MyProjects = [
@@ -247,8 +263,8 @@ export const SchoolProjects = [
 export const VolunteeringExperiences = [
     {
         title: "ProjectX Lead",
-        company_name: "UofTAI - University of Toronto",
-        // icon: twitter,
+        company_name: "UofT AI",
+        icon: uoftai,
         iconBg: "#accbe1",
         date: "September 2024 - April 2025",
         points: [

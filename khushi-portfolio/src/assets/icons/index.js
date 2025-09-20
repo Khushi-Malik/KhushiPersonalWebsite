@@ -26,8 +26,22 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import resume from './resume.png'
+import googleScholar from './googleScholar.png'
+import savifinance from './savifinance.jpeg'
+import linuxfound from './linuxfound.jpg'
+import utmist from './utmist.svg'
+import uoft from './uoft.svg'
+import uoftai from './uoftai.png'
 
 export {
+    uoftai,
+    uoft,
+    utmist,
+    linuxfound,
+    savifinance,
+    resume,
+    googleScholar,
     css,
     express,
     git,
