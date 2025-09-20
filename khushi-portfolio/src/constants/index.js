@@ -9,39 +9,59 @@ export const ResearchExperiences = [
     {
          title: "Machine Learning - Research Student",
         company_name: "University of Toronto",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "April 2025 - September 2025",
         points: [
-            "Lisa"],
+            "Conducted structured analysis of introductory ML textbooks, mapping coverage of core algorithms (classification, regression, clustering) and their mathematical formulations.",
+            "Designed and applied a hybrid coding framework integrating ML domain knowledge with qualitative methods, ensuring reproducibility across datasets.",
+            "Investigated how ML textbooks frame discipline-wide challenges, emerging trends, interdisciplinary overlaps, and other motivational strategies, within a 14-code framework connecting findings to broader ML pedagogy and theory."],
     },
     {
          title: "Research Student",
         company_name: "University of Toronto",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "April 2024 - September 2025",
         points: [
-            "Andrew"],
+            "Conducted advanced data analysis using Python (semopy) to build and test structural equation models (SEM) using path models.",
+            "Designed multi-group path models and applied ANOVA and correlation analyses to compare effects across learner groups and track changes over time.",
+            "Discovered that prior programming experience was the strongest predictor of self-efficacy, while gender effects were minimal; higher self-efficacy growth linked to stronger exam performance.",
+            "Published in the International Computing Education Research (ICER) Conference, a leading venue in CS education, and presented findings to an international audience of researchers and educators"],
     },
     {
-        title: "Data Science - Research Student",
+        title: "Quantitative Data Analyst",
         company_name: "University of Toronto",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "April 2024 - September 2024",
         points: [
-            "Naaz"],
+            "Performed statistical analysis (Mann–Whitney tests, correlation analysis, group comparisons) to examine how gender, native language, and prior programming experience affect CS1/CS2 performance and retention.",
+            "Executed data wrangling, cleaning, and transformation on large student datasets using Python (pandas, numpy) for reproducible workflows.",
+            "Built data visualizations (matplotlib, seaborn) to communicate patterns and trends in student performance to faculty and researchers.",
+            "Automated parts of the analysis pipeline in Jupyter Notebooks, ensuring clarity, replicability, and efficiency of results."],
     },
     {
-        title: "Video Production - Research Student",
+        title: "Educational Content Developer- Research Student",
         company_name: "University of Toronto",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "April 2024 - September 2024",
         points: [
-            "Tingting"],
-    }
+            "Designed storytelling-based instructional videos with physical analogies to make complex programming concepts more accessible, memorable, and engaging.",
+            "Identified and addressed common student misconceptions in introductory programming, applying engagement theory to improve conceptual understanding and code literacy.",
+            "Produced educational videos that were integrated into the University of Toronto’s Introductory Programming course curriculum."],
+    },
+    {
+        title: "Research Student - Algorithmic Literacies in CS Education",
+        company_name: "University of Toronto",
+        // icon: twitter,
+        iconBg: "#accbe1",
+        date: "April 2024 - September 2024",
+        points: [
+            "Conducted a systematic literature review of 60+ papers on K-12 algorithmic literacy education, analyzing pedagogical approaches, tools, and learning outcomes.",
+            "Published findings in the Simon Fraser Educational Journal.",],
+    },
 
 ];
 
@@ -60,9 +80,19 @@ export const WorkExperiences = [
     //     ],
     // }
     {
+        title: "Software Engineering Intern",
+        company_name: "Savi Finance",
+        // icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2025 - present",
+        points: [
+            "Developing and deploying AI-powered workflow automation systems enabling agent-to-human communication by implementing APIs, CRUD operations, and production-ready pipelines for task automations."
+        ],
+    },
+    {
         title: "Teaching Assistant - CSC108",
         company_name: "University of Toronto",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "September 2025 - December 2025, September 2024 - December 2024",
         points: [
@@ -73,17 +103,29 @@ export const WorkExperiences = [
         ],
     },
     {
-        title: "Machine Learning Intern",
-        company_name: "Human Feedback Foundation + The Linux Foundation",
+        title: "ML Technical Lead",
+        company_name: "University of Toronto Machine Intelligence Student Team (UTMIST)",
+        // icon: twitter,
+        iconBg: "#accbe1",
+        date: "September 2025 - present",
+        points: [
+            "Leading development of a custom chess engine using PyTorch, python-chess, and scikit-learn to evaluate board positions with pawn-based heuristics and ML-driven analysis.",
+            "Fine-tuning HuggingFace models to generate natural language explanations of evaluations and answer user queries, integrating interpretability into gameplay AI",
+        ],
+    },
+    {
+        title: "AI/ML Student Researcher– Industry Project,",
+        company_name: "The Linux Foundation",
         // icon: twitter,
         iconBg: "#accbe1",
         date: "January 2025 - April 2025",
         points: [
-            "Developed an ML-powered framework to fingerprint LLMs using prompt engineering and evaluation harnesses.",
-            "Implemented algorithms to classify features with high precision and generate persistent IDs for identified models",
-            "Collaborated with a team of researchers to refine the framework and improve its accuracy.",
-            "Achieved 87% accuracy in model identification across various LLMs.",
-            "Presented findings to stakeholders and contributed to the foundation's research initiatives."
+            "This was in collaboration with University of Toronto and Human Feedback Foundation as part of a industry project.",
+            "Developed an ML framework to fingerprint large language models (LLMs) using prompt engineering, evaluation harnesses, and custom algorithms.",
+            "Achieved 87% accuracy in identifying models across providers and platforms, including OpenAI, Anthropic, Google, DeepSeek, as well as open-source models accessed through Ollama, HuggingFace, and DeepInfra.",
+            "Researched and integrated benchmarks such as Promptfoo, MMLU Pro, and OpenAI Evals to validate performance.",
+            "Generated persistent model IDs for robust identification, even under high-temperature sampling.",
+            "Presented findings at AI Tinkerers (Mozilla) and contributed to the foundation’s research initiatives."
         ],
     },  
 ];
@@ -161,6 +203,14 @@ export const SchoolProjects = [
     },
     {
         iconURL: null,
+        name: 'Sokoban',
+        description: 'A Sokoban game implemented in Assembly RISC-V language, featuring level loading, player movement, box pushing mechanics, win condition detection, and player leaderboard logic, all optimized for performance and memory usage.',
+        link: 'https://github.com/Khushi-Malik',
+        tags: ['RISC-V', 'Systems', 'Assembly'],
+        category: 'Systems'
+    },
+    {
+        iconURL: null,
         name: 'ML Predictor',
         description: 'A machine learning model that predicts the likelihood of a a dish being sushi, pizza, or shwarma based on real data obtained from human surveys.',
         link: 'https://github.com/Khushi-Malik',
@@ -196,22 +246,13 @@ export const SchoolProjects = [
 
 export const VolunteeringExperiences = [
     {
-        title: "ML Project Lead",
-        company_name: "UTMist - University of Toronto",
-        icon: twitter,
-        iconBg: "#accbe1",
-        date: "September 2025 - present",
-        points: [
-            "FixMyElo"],
-    },
-    {
         title: "ProjectX Lead",
         company_name: "UofTAI - University of Toronto",
-        icon: twitter,
+        // icon: twitter,
         iconBg: "#accbe1",
         date: "September 2024 - April 2025",
         points: [
-            "ProjectX"],
+            "Organise the AI Competition- ProjectX. Selected the theme and wrote problem statement, while coordinating with universities, mentors, and judges."],
     },
     {
         title: "Awareness Associate",

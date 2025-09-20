@@ -1,34 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function InteractiveTimeline(props) {
   const validExperiences = props.experiences || [];
   const [expandedItem, setExpandedItem] = useState(null);
   const [clickedItem, setClickedItem] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [contentHeights, setContentHeights] = useState({});
+  const contentRefs = useRef({});
 
   // Initialize mobile state safely
   useEffect(function() {
     setIsMobile(window.innerWidth < 768);
   }, []);
 
+  // Measure content heights when items expand - more robust measurement
+  useEffect(function() {
+    const newHeights = {};
+    validExperiences.forEach(function(_, index) {
+      const contentEl = contentRefs.current[index];
+      if (contentEl) {
+        // Create a temporary clone to measure without affecting layout
+        const clone = contentEl.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.visibility = 'hidden';
+        clone.style.height = 'auto';
+        clone.style.maxHeight = 'none';
+        clone.style.width = contentEl.offsetWidth + 'px';
+        clone.style.overflow = 'visible';
+        
+        document.body.appendChild(clone);
+        newHeights[index] = Math.max(clone.scrollHeight + 20, 100); // Add padding + minimum
+        document.body.removeChild(clone);
+      }
+    });
+    setContentHeights(newHeights);
+  }, [validExperiences, expandedItem, clickedItem]);
+
   // Rainbow color schemes for each experience
   const colorSchemes = [
-    // {
-    //   gradient: 'from-purple-50 to-pink-50',
-    //   border: 'border-purple-200',
-    //   hover: 'hover:to-purple-100 hover:from-pink-100',
-    //   accent: 'purple',
-    //   dot: 'to-purple-500 from-pink-600',
-    //   dotInner: 'to-purple-400 from-pink-500'
-    // },
-    // {
-    //   gradient: 'to-violet-50 from-purple-50',
-    //   border: 'border-violet-200',
-    //   hover: 'hover:to-violet-100 hover:from-purple-100',
-    //   accent: 'violet',
-    //   dot: 'to-violet-500 from-purple-600',
-    //   dotInner: 'to-violet-400 from-purple-500'
-    // },
     {
       gradient: 'to-blue-50 from-indigo-50',
       border: 'border-blue-200',
@@ -197,6 +206,8 @@ function InteractiveTimeline(props) {
       {validExperiences.map(function(experience, index) {
         const colorScheme = colorSchemes[index % colorSchemes.length];
         const accentColors = getAccentColors(colorScheme.accent, clickedItem === index);
+        const isExpanded = expandedItem === index || clickedItem === index;
+        const contentHeight = contentHeights[index] || 0;
         
         return (
         <div
@@ -204,7 +215,7 @@ function InteractiveTimeline(props) {
           className={`relative flex ${
             isMobile
               ? 'flex-col items-start mb-10 pl-16'
-              : `items-center mb-16 ${
+              : `items-start mb-16 ${
                   index % 2 === 0 ? 'justify-start' : 'justify-end'
                 } md:flex-row`
           }`}
@@ -221,14 +232,14 @@ function InteractiveTimeline(props) {
           >
             <div
               className={`w-6 h-6 rounded-full border-4 ${
-                expandedItem === index || clickedItem === index
+                isExpanded
                   ? `bg-gradient-to-r ${colorScheme.dot} border-white scale-110`
                   : 'bg-white border-gray-300'
               } shadow-md flex items-center justify-center transition-all duration-300`}
             >
               <div
                 className={`w-2.5 h-2.5 rounded-full ${
-                  expandedItem === index || clickedItem === index
+                  isExpanded
                     ? 'bg-white'
                     : `bg-gradient-to-r ${colorScheme.dotInner}`
                 }`}
@@ -244,7 +255,7 @@ function InteractiveTimeline(props) {
                 : `md:w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`
             } text-left focus:outline-none focus:ring-opacity-70 rounded-2xl`}
             onClick={function() { toggleExpanded(index); }}
-            aria-expanded={expandedItem === index || clickedItem === index}
+            aria-expanded={isExpanded}
             aria-label={`Toggle details for ${experience.title || 'experience'}`}
           >
             <div
@@ -300,7 +311,7 @@ function InteractiveTimeline(props) {
                 {isMobile && (
                   <div
                     className={`transform transition-transform duration-300 ${
-                      expandedItem === index || clickedItem === index ? 'rotate-180' : ''
+                      isExpanded ? 'rotate-180' : ''
                     }`}
                   >
                     <svg
@@ -320,25 +331,30 @@ function InteractiveTimeline(props) {
                 )}
               </div>
 
-              {/* Expandable Content */}
+              {/* Expandable Content with Dynamic Height - No Limits */}
               <div
-                className={`overflow-hidden transition-all duration-500 ${
-                  expandedItem === index || clickedItem === index
-                    ? 'max-h-96 opacity-100'
-                    : 'max-h-0 opacity-0'
-                }`}
+                className="transition-all duration-700 ease-out"
+                style={{
+                  maxHeight: isExpanded ? `${Math.max(contentHeight, 500)}px` : '0px',
+                  opacity: isExpanded ? 1 : 0,
+                  overflow: isExpanded ? 'visible' : 'hidden'
+                }}
               >
-                <div className="border-t border-gray-200 pt-4">
+                <div 
+                  ref={function(el) { contentRefs.current[index] = el; }}
+                  className="border-t border-gray-200 pt-4 pb-2"
+                  style={{ minHeight: 'auto' }}
+                >
                   {experience.points && experience.points.length > 0 ? (
-                    <ul className="space-y-2">
+                    <ul className="space-y-4">
                       {experience.points.map(function(point, pointIndex) {
                         return (
                           <li
                             key={`point-${index}-${pointIndex}`}
-                            className="flex items-start text-gray-700"
+                            className="flex items-start text-gray-700 leading-relaxed"
                           >
-                            <div className={`w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 ${accentColors.bullet}`}></div>
-                            <span className="text-sm leading-relaxed">
+                            <div className={`w-2 h-2 rounded-full mt-2 mr-4 flex-shrink-0 ${accentColors.bullet}`}></div>
+                            <span className="text-sm leading-loose break-words">
                               {point}
                             </span>
                           </li>

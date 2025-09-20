@@ -21,13 +21,14 @@ const Navbar = () => {
             'text-blue-500' : 'text-black'}>
                 Blogs
             </NavLink>
+            
+            <NavLink to="/achievement" className={ ({isActive}) => isActive ? 
+            'text-blue-500' : 'text-black'}>
+                Achievements
+            </NavLink>
             <NavLink to="/contact" className={ ({isActive}) => isActive ? 
             'text-blue-500' : 'text-black'}>
                 Contact
-            </NavLink>
-            <NavLink to="/achievement" className={ ({isActive}) => isActive ? 
-            'text-blue-500' : 'text-black'}>
-                Achievement
             </NavLink>
             <Social />
 
