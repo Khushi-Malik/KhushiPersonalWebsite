@@ -177,14 +177,6 @@ const Achievement = () => {
             );
           })}
         </div>
-
-        {/* Simple footer */}
-        <div className="mt-20 text-center border-t border-gray-200 pt-12">
-          <p className="text-gray-500 italic max-w-2xl mx-auto">
-            These accomplishments represent milestones in my journey of learning and growth. 
-            Each achievement has contributed to shaping my perspective and capabilities.
-          </p>
-        </div>
       </div>
     </section>
   )
