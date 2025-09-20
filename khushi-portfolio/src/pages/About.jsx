@@ -1,8 +1,92 @@
 import React, { useState } from 'react';
 import skills from '../assets/images/skills';
-import { ResearchExperiences, WorkExperiences, VolunteeringExperiences } from '../constants';
+import { ResearchExperiences, WorkExperiences, VolunteeringExperiences, Publications } from '../constants';
 import InteractiveTimeline from '../components/InteractiveTimeline';
 import CTA from '../components/CTA';
+
+// Publications Component
+const PublicationsSection = () => {
+  // You can move this to your constants file later
+
+  return (
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8 border border-blue-100">
+      <h4 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
+        <span className="mr-2"/>
+        Publications
+      </h4>
+      
+      <div className="space-y-6">
+        {Publications.map((pub, index) => (
+          <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-4">
+              <div className="flex-1">
+                {/* Publication Type Badge */}
+                <span className="inline-block px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-3">
+                  {pub.type}
+                </span>
+                
+                {/* Title */}
+                <h5 className="text-lg font-semibold text-gray-800 mb-2 leading-tight">
+                  {pub.title}
+                </h5>
+                
+                {/* Authors */}
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Authors:</strong> {pub.authors}
+                </p>
+                
+                {/* Venue and Year */}
+                <p className="text-sm text-blue-600 mb-3">
+                  <strong>{pub.venue}</strong> ({pub.year})
+                </p>
+                
+                {/* Abstract */}
+                <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                  {pub.abstract}
+                </p>
+                
+                {/* Links */}
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href={pub.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Read Paper
+                  </a>
+                  
+                  {pub.doi && (
+                    <a
+                      href={`https://doi.org/${pub.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors duration-200"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                      </svg>
+                      DOI: {pub.doi}
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {Publications.length === 0 && (
+        <div className="text-center py-8">
+          <p className="text-gray-500 text-sm">No publications available at this time.</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('work');
@@ -82,6 +166,10 @@ const About = () => {
         {/* Tab Content */}
         <div className="relative min-h-[400px]">
           <div className="transition-opacity duration-300 ease-in-out">
+            {/* Publications Section - Only shows for Research tab */}
+            {activeTab === 'research' && <PublicationsSection />}
+            
+            {/* Interactive Timeline */}
             <InteractiveTimeline experiences={experienceData[activeTab].data} />
           </div>
         </div>

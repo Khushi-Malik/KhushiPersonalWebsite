@@ -286,3 +286,35 @@ export const VolunteeringExperiences = [
         ],
     },
 ];
+export const Publications = [
+    {
+      title: "Interactive Effects of Prior Experience and Gender on Self-Efficacy and Achievement in CS1",
+      authors: "Khushi Malik, Amber Richardson, Michelle Craig, Andrew Petersen",
+      venue: "International Computing Education Research Conference (ICER)",
+      year: "2025",
+      link: "https://dl.acm.org/doi/full/10.1145/3702652.3744216",
+    //   doi: "https://doi.org/10.1145/3702652.3744216",
+    //   abstract: "This replication study investigates how performance is influenced by self-efficacy, and argues that prior programming experience is more influential in CS1 students rather than gender alone. ",
+      type: "Journal Article"
+    },
+    {
+      title: "Reducing Isolation through Peer-Modeled Posts",
+      authors: "Naaz Sibia, Angela Zavaleta Bernuy, Amber Richardson, Khushi Malik, Prajna Pendharkar, Carolina Nobre, Michael Liut, Andrew Petersen",
+      venue: "Proceedings of the 56th ACM Technical Symposium on Computer Science Education (SIGCSE)",
+      year: "2025",
+      link: "https://doi.org/10.1145/3641555.3705238",
+    //   doi: "10.1000/sample.doi.789012",
+    //   abstract: "An investigation into how data science methodologies can be applied to address social challenges and create positive community impact.",
+      type: "Conference Poster"
+    },
+    {
+      title: "A Thematic Literature Review of Decolonization and Abolitionist Approaches in Computing Education",
+      authors: "Khushi Malik, Lanz Angeles, Rutwa Engineer, Adelina Patlatii, Alisha Hasan, Sana Sarin",
+      venue: "SFU Educational Review",
+      year: "2024",
+      link: "https://doi.org/10.21810/sfuer.v16i1.6689",
+    //   doi: "10.1000/sample.doi.789012",
+    //   abstract: "An investigation into how data science methodologies can be applied to address social challenges and create positive community impact.",
+      type: "Literature Review"
+    }
+  ];
