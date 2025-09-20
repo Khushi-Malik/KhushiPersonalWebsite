@@ -145,6 +145,7 @@ const Blog = () => {
               </h1>
               <div className="mt-5 flex flex-col gap-3 text-slate-500">
                   <p >
+                      This page is a work in progress right now... BUT <br/>
                       I like to read and write about a variety of topics, including technology, personal experiences, and the research papers I read. Here are some of my recent blog posts.
                   </p>
               </div>

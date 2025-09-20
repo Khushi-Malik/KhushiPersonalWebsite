@@ -20,21 +20,21 @@ const renderContent = {
     ),
     2: (
         <InfoBox
-            text="First Something About Me :)"
+            text="About Me :)"
             link="/about"
             btnText="Learn More"
         />
     ),
     3: (
         <InfoBox
-            text="The Latest Projects I have Worked On!"
+            text="The Projects I have Worked On!"
             link="/projects"
             btnText="Learn More"
         />
     ),
     4: (
         <InfoBox
-            text="I always read a lot of articles on tech and design. Check out my blog!"
+            text="I read and write a lot. Check out my blog!"
             link="/blog"
             btnText="Learn More"
         />
