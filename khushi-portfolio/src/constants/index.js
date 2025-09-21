@@ -334,3 +334,78 @@ export const Publications = [
       type: "Literature Review"
     }
   ];
+
+export const achievements = [
+    {
+      title: "Dean's List Scholar",
+      institution: "University of Toronto",
+      year: "Winter 2024",
+      details: "Academic excellence recognition for maintaining CGPA > 3.50 at the end of session in which the fifth credit has been passed.",
+      // category: "academic",
+      // value: "Top 10%"
+    },
+    {
+      title: "Dean's List Scholar",
+      institution: "University of Toronto",
+      year: "Winter 2025",
+      details: "Academic excellence recognition for maintaining CGPA > 3.50 at the end of session in which the tenth credit has been passed.",
+      // category: "academic",
+      // value: "Top 10%"
+    },
+    {
+      title: "Dean's List Scholar",
+      institution: "University of Toronto",
+      year: "Summer 2024",
+      details: "Academic excellence recognition for maintaining CGPA > 3.50 at the end of session in which the fifteenth credit has been passed.",
+      // category: "academic",
+      // value: "Top 10%"
+    },
+    {
+      title: "WINNER: Google Women Tech-makers & CGI Best Women Hack",
+      institution: "GenAI Genesis- Canada's Largest AI Hackathon",
+      year: "2025",
+      details: "Awarded to the project that champions women in AI, fostering innovation that empowers and uplifts communities",
+      // category: "Hackathon", 
+      value: "Winner"
+    },
+    {
+      title: "AWS Certified Cloud Practitioner",
+      institution: "Amazon Web Services", 
+      year: "September 2025",
+      details: "Proficient in AWS Cloud services (EC2, S3, IAM, ELB, VPC) with foundational knowledge of cloud architecture, security, and deployment best practices.",
+      // category: "certification",
+      value: "Foundational"
+    },
+    {
+      title: "Research Presentation",
+      institution: "International Computing Education Research (ICER) Conference",
+      year: "2025",
+      details: "Published in the International Computing Education Research (ICER) Conference, a leading venue in CS education, and presented findings to an international audience of researchers and educators at University of Virginia",
+      // category: "research",
+      value: "Research"
+    },
+    {
+      title: "Entrance Scholarship",
+      institution: "University of Toronto",
+      year: "2023", 
+      details: "Merit-based financial award for academic performance",
+      // category: "scholarship",
+      value: "$3,000"
+    },
+    {
+      title: "JEE Advanced Qualified",
+      institution: "JEE India",
+      year: "2022",
+      details: "Engineering Entrance Examination - Advanced level; Top 1.1% Nationally",
+      // category: "examination",
+      // value: "AIR 17000"
+    },
+    {
+      title: "JEE Main Qualified",
+      institution: "JEE India",
+      year: "2022",
+      details: "Engineering Entrance Examination - Qualifier level",
+      // category: "examination",
+      value: "96.7 Percentile"
+    },
+  ];

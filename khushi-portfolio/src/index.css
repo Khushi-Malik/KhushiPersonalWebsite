@@ -185,118 +185,13 @@ body:has(.card[data-color="green"]:hover) {
 /* Add this CSS to your stylesheet */
 
 /* Rainbow Shimmer Styles */
-/* Complete Rainbow Shimmer - Full Color Sweep */
-.rainbow-shimmer {
-  background: linear-gradient(90deg, 
-    #ff6b6b 0%, 
-    #ffd93d 20%, 
-    #6bcf7f 40%, 
-    #4dabf7 60%, 
-    #9775fa 80%, 
-    #ff6b6b 100%
-  );
-  background-size: 300% 100%;
-  animation: completeShimmer 25s linear infinite;  /* Slowed down from 15s to 25s */
-  color: white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
 
-.rainbow-shimmer:hover {
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);  /* Enhanced shadow */
-  animation-duration: 0.6s;  /* Fast hover animation */
-}
+/* Subtle rainbow border with glassmorphism */
 
-.rainbow-shimmer-title {
-  background: linear-gradient(90deg, 
-    #ff6b6b 0%, 
-    #ffd93d 20%, 
-    #6bcf7f 40%, 
-    #4dabf7 60%, 
-    #9775fa 80%, 
-    #ff6b6b 100%
-  );
-  background-size: 300% 100%;
-  animation: completeShimmer 20s linear infinite;  /* Slowed down from 12s to 20s */
-  color: white;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  transition: all 10s ease;
-}
-
-.rainbow-shimmer-title:hover {
-  transform: translateY(-5px);  /* Same subtle lift as boxes */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);  /* Enhanced shadow */
-  animation-duration: 1s;  /* Fast hover animation */
-}
-
-/* Complete shimmer animation - each color fully sweeps across */
-@keyframes completeShimmer {
-  0% { 
-    background-position: -100% 0%;
-  }
-  100% { 
-    background-position: 200% 0%;
-  }
-}
-
-/* Alternative: Wave-like complete sweep */
-.rainbow-shimmer.wave {
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    #ff6b6b 10%,
-    #ffd93d 25%, 
-    #6bcf7f 40%, 
-    #4dabf7 55%, 
-    #9775fa 70%,
-    #ff6b6b 85%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: waveShimmer 18s ease-in-out infinite;  /* Slowed down from 10s to 18s */
-}
-
-@keyframes waveShimmer {
-  0% { 
-    background-position: -100% 0%; 
-  }
-  100% { 
-    background-position: 100% 0%; 
-  }
-}
-
-/* Smooth flowing version - each color completely fills the box */
-.rainbow-shimmer.flow {
-  background: linear-gradient(90deg, 
-    #ff6b6b 0%, 
-    #ff6b6b 16.66%,
-    #ffd93d 16.66%, 
-    #ffd93d 33.33%,
-    #6bcf7f 33.33%, 
-    #6bcf7f 50%,
-    #4dabf7 50%, 
-    #4dabf7 66.66%,
-    #9775fa 66.66%, 
-    #9775fa 83.33%,
-    #ff6b6b 83.33%,
-    #ff6b6b 100%
-  );
-  background-size: 600% 100%;
-  animation: flowShimmer 20s ease-in-out infinite;  /* Slowed down from 10s to 20s */
-}
-
-@keyframes flowShimmer {
-  0% { background-position: 0% 0%; }
-  20% { background-position: -100% 0%; }
-  40% { background-position: -200% 0%; }
-  60% { background-position: -300% 0%; }
-  80% { background-position: -400% 0%; }
-  100% { background-position: -500% 0%; }
-}
-
-/* Keep other styles */
 .info-box {
-  padding: 12px 16px;           /* Reduced from 10px to 12px 16px for better proportions */
-  border-radius: 12px; 
-  transition: all 6s ease;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -304,49 +199,143 @@ body:has(.card[data-color="green"]:hover) {
   max-width: 550px;
   text-align: center;
   z-index: 1;
+  
+  /* Glassmorphism background */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Subtle rainbow border */
+  border: 2px solid;
+  border-image: linear-gradient(135deg, 
+    #ff6b6b 0%, 
+    #ffa726 25%, 
+    #66bb6a 50%, 
+    #42a5f5 75%, 
+    #ab47bc 100%
+  ) 1;
+  
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.rainbow-shimmer-btn {
+/* Alternative: Even more subtle with rounded border */
+.info-box.subtle-rainbow {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.info-box.subtle-rainbow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, 
+    rgba(255, 107, 107, 0.6) 0%, 
+    rgba(255, 167, 38, 0.6) 25%, 
+    rgba(102, 187, 106, 0.6) 50%, 
+    rgba(66, 165, 245, 0.6) 75%, 
+    rgba(171, 71, 188, 0.6) 100%
+  );
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.info-box.subtle-rainbow:hover::before {
+  opacity: 1;
+}
+
+/* Ultra-subtle version with just a hint of rainbow */
+.info-box.minimal-rainbow {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.1),
+    inset 0 1px 0 rgba(255, 107, 107, 0.1),
+    inset 1px 0 0 rgba(255, 167, 38, 0.1),
+    inset 0 -1px 0 rgba(102, 187, 106, 0.1),
+    inset -1px 0 0 rgba(66, 165, 245, 0.1);
+}
+
+/* Hover effects */
+.info-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.info-box.subtle-rainbow:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.info-box.minimal-rainbow:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 8px 25px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255, 107, 107, 0.2),
+    inset 1px 0 0 rgba(255, 167, 38, 0.2),
+    inset 0 -1px 0 rgba(102, 187, 106, 0.2),
+    inset -1px 0 0 rgba(66, 165, 245, 0.2);
+}
+
+/* Clean button styling */
+.info-box-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 12px;           /* Reduced from 5px 10px to 6px 12px */
-  margin-top: 3px;
-  border-radius: 20px;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #333;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 10s ease;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
 }
 
-
-.info-box.rainbow-shimmer {
-  animation: completeShimmer 25s linear infinite, float 25s ease-in-out infinite;  /* Slowed down both animations to match */
+.info-box-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+/* For dark backgrounds, use this variant */
+.info-box.dark-glass {
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-box.dark-glass::before {
+  background: linear-gradient(135deg, 
+    rgba(255, 107, 107, 0.4) 0%, 
+    rgba(255, 167, 38, 0.4) 25%, 
+    rgba(102, 187, 106, 0.4) 50%, 
+    rgba(66, 165, 245, 0.4) 75%, 
+    rgba(171, 71, 188, 0.4) 100%
+  );
+}
+
+.info-box.dark-glass .info-box-btn {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .info-box {
-    margin: 5px;
-    padding: 7px;
-    max-width: 140px;
+    margin: 8px;
+    padding: 10px 14px;
+    max-width: 280px;
   }
   
-  .rainbow-shimmer-title {
-    padding: 7px;
-    margin: 4px;
-  }
-  
-  .rainbow-shimmer-btn {
-    padding: 4px 8px;
-    margin-top: 12px;
+  .info-box-btn {
+    padding: 6px 12px;
+    margin-top: 10px;
+    font-size: 14px;
   }
 }

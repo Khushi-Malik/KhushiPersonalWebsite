@@ -264,40 +264,43 @@ function InteractiveTimeline(props) {
               }`}
             >
               {/* Header */}
-              <div className="flex items-start justify-between mb-3">
-                <div className="flex-1">
-                  <h3
-                    className={`font-bold ${
-                      isMobile
-                        ? 'text-lg text-gray-800'
-                        : `text-xl text-gray-800 mb-2 group-hover:${accentColors.text} transition-colors`
-                    } ${clickedItem === index ? accentColors.text : ''}`}
-                  >
-                    {experience.title || 'Untitled Experience'}
-                  </h3>
-                  {experience.company_name && (
-                    <p className={`font-semibold ${accentColors.text}`}>
-                      {experience.company_name}
-                    </p>
-                  )}
-                </div>
-                {experience.icon && (
-                  <div
-                    className={`ml-4 flex items-center justify-center ${
-                      isMobile ? 'w-10 h-10' : 'w-12 h-12 bg-white rounded-full shadow-md'
-                    }`}
-                  >
-                    <img
-                      src={experience.icon}
-                      alt={experience.company_name || 'Company logo'}
-                      className={isMobile ? 'w-6 h-6 object-contain' : 'w-8 h-8 object-contain'}
-                      onError={function(e) {
-                        e.target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                )}
-              </div>
+<div className="flex items-start justify-between mb-3">
+  <div className="flex-1">
+    <h3
+      className={`font-bold ${
+        isMobile
+          ? 'text-lg text-gray-800'
+          : 'text-xl text-gray-800 mb-2'
+      }`}
+    >
+      {experience.title || 'Untitled Experience'}
+    </h3>
+    {experience.company_name && (
+      <p className={`font-semibold ${accentColors.text}`}>
+        {experience.company_name}
+      </p>
+    )}
+  </div>
+  {experience.icon && (
+    <div
+      className={`ml-4 flex items-center justify-center overflow-hidden ${
+        isMobile 
+          ? 'w-10 h-10 bg-white rounded-full shadow-md' 
+          : 'w-12 h-12 bg-white rounded-full shadow-md'
+      }`}
+    >
+      <img
+        src={experience.icon}
+        alt={experience.company_name || 'Company logo'}
+        className="w-full h-full object-cover"
+        onError={function(e) {
+          e.target.style.display = 'none';
+        }}
+      />
+    </div>
+  )}
+</div>
+              {/* </div> */}
 
               {/* Date & Arrow */}
               <div className="flex items-center justify-between mb-4">
