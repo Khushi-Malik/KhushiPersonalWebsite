@@ -14,7 +14,7 @@ export const personalBlogs = [
     //     id: 2,
     //     title: "Building My First iOS App: Lessons Learned",
     //     excerpt: "The ups and downs of developing HabitBreaker, from initial concept to App Store submission.",
-    //     date: "",
+    //     date: "2024-05-10",
     //     readTime: "x min read",
     //     tags: ["Personal", "iOS", "Development"],
     //     category: "personal"
