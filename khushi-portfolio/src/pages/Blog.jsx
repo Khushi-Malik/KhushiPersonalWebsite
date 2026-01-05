@@ -1,77 +1,51 @@
 import React, { useState } from 'react'
-import { Calendar, Clock, ExternalLink } from 'lucide-react';
 import { personalBlogs, researchPapers, educationalBlogs } from '../blogs';
 
 const BlogCard = ({ post, type = "blog" }) => {
     return (
-        <article className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
-            
-            {/* Header */}
-            <div className="mb-4">
-                <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-500 capitalize font-medium">
-                        {post.category === 'research' ? 'Paper Review' : post.category}
-                    </span>
-                    <div className="flex items-center text-sm text-gray-400 gap-4">
-                        <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                            <Clock className="w-4 h-4" />
-                            <span>{post.readTime}</span>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 className="text-lg font-semibold text-gray-900 mb-3">
-                    {post.title}
-                </h2>
+        <article className="py-6 border-b border-gray-200 last:border-b-0">
+            <div className="mb-2">
+                <span className="text-xs uppercase tracking-wide text-gray-500">
+                    {post.category === 'research' ? 'Paper Review' : post.category}
+                </span>
             </div>
+            
+            <h2 className="text-xl font-medium text-gray-900 mb-2 hover:text-gray-600 transition-colors cursor-pointer">
+                {post.title}
+            </h2>
 
-            {/* Research paper specific info */}
             {type === "research" && (
-                <div className="mb-3 text-sm text-gray-600">
-                    <p className="font-medium">{post.authors}</p>
+                <div className="mb-2 text-sm text-gray-600">
+                    <p>{post.authors}</p>
                     <p className="text-gray-500">{post.journal}</p>
                 </div>
             )}
 
-            {/* Content */}
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="text-gray-600 mb-3 leading-relaxed">
                 {post.excerpt}
             </p>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.slice(0, 3).map((tag, index) => (
-                    <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded font-medium">
-                        {tag}
-                    </span>
-                ))}
-                {post.tags.length > 3 && (
-                    <span className="text-xs text-gray-400">+{post.tags.length - 3} more</span>
+            <div className="flex items-center gap-4 text-sm text-gray-500">
+                {post.date && (
+                    <>
+                        <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                        <span>·</span>
+                    </>
                 )}
-            </div>
-
-            {/* Actions */}
-            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                <div className="flex gap-2">
-                    {type === "research" && post.paperUrl && (
+                <span>{post.readTime}</span>
+                {type === "research" && post.paperUrl && (
+                    <>
+                        <span>·</span>
                         <a
                             href={post.paperUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-1 px-3 py-1 text-sm text-gray-600 border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+                            className="underline hover:text-gray-900"
                         >
-                            <ExternalLink className="w-4 h-4" />
-                            Original Paper
+                            Read paper
                         </a>
-                    )}
-                </div>
-                <button className="px-4 py-2 bg-gray-900 text-white text-sm rounded hover:bg-gray-800 transition-colors">
-                    Read More
-                </button>
+                    </>
+                )}
             </div>
         </article>
     );
@@ -98,61 +72,61 @@ const Blog = () => {
 
     return (
         <section className='max-container'>
-            {/* Header */}
-            <div className="text-center mb-12">
-                <h1 className="head-text mb-6">
-                    My Writing
+            <div className="mb-12">
+                <h1 className="head-text mb-4">
+                    Writing
                 </h1>
-                <div className="max-w-2xl mx-auto">
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                        This page is a work in progress right now... BUT I like to read and write about 
-                        a variety of topics, including technology, personal experiences, and research papers.
-                    </p>
-                </div>
+                <p className="text-gray-600 max-w-2xl">
+                    Thoughts on technology, personal experiences, and research papers I find interesting. 
+                    More content coming soon.
+                </p>
             </div>
 
-            {/* Search Bar */}
-            <div className="max-w-md mx-auto mb-8">
+            <div className="max-w-xl mb-8">
                 <input
                     type="text"
-                    placeholder="Search posts..."
+                    placeholder="Search..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
+                    className="w-full px-4 py-2 border-b border-gray-300 focus:outline-none focus:border-gray-900 transition-colors"
                 />
             </div>
 
-            {/* Simple Tabs */}
-                  <div className="flex justify-between max-w-md mx-auto mb-12">
-                        <button
-                        onClick={() => setActiveTab('personal')}
-                        className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                            activeTab === 'personal' ? 'bg-[#6FE3F0] text-gray-900 shadow-md' : 'text-gray-600 hover:text-gray-900'
-                        }`}
-                        >
-                        Personal
-                        </button>
-                        <button
-                        onClick={() => setActiveTab('educational')}
-                        className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                            activeTab === 'educational' ? 'bg-[#6FE3F0] text-gray-900 shadow-md' : 'text-gray-600 hover:text-gray-900'
-                        }`}
-                        >
-                        Educational
-                        </button>
-                        <button
-                        onClick={() => setActiveTab('paper')}
-                        className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                            activeTab === 'paper' ? 'bg-[#6FE3F0] text-gray-900 shadow-md' : 'text-gray-600 hover:text-gray-900'
-                        }`}
-                        >
-                        Papers
-                        </button>
-                    </div>
+            <div className="flex gap-6 mb-12 border-b border-gray-200">
+                <button
+                    onClick={() => setActiveTab('personal')}
+                    className={`pb-3 font-medium transition-colors ${
+                        activeTab === 'personal' 
+                            ? 'text-gray-900 border-b-2 border-gray-900' 
+                            : 'text-gray-500 hover:text-gray-900'
+                    }`}
+                >
+                    Personal
+                </button>
+                <button
+                    onClick={() => setActiveTab('educational')}
+                    className={`pb-3 font-medium transition-colors ${
+                        activeTab === 'educational' 
+                            ? 'text-gray-900 border-b-2 border-gray-900' 
+                            : 'text-gray-500 hover:text-gray-900'
+                    }`}
+                >
+                    Educational
+                </button>
+                <button
+                    onClick={() => setActiveTab('research')}
+                    className={`pb-3 font-medium transition-colors ${
+                        activeTab === 'research' 
+                            ? 'text-gray-900 border-b-2 border-gray-900' 
+                            : 'text-gray-500 hover:text-gray-900'
+                    }`}
+                >
+                    Papers
+                </button>
+            </div>
 
-            {/* Blog Posts Grid */}
             {filteredPosts.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="max-w-3xl">
                     {filteredPosts.map((post) => (
                         <BlogCard 
                             key={post.id} 
@@ -162,9 +136,8 @@ const Blog = () => {
                     ))}
                 </div>
             ) : (
-                <div className="text-center py-16">
-                    <h3 className="text-xl font-medium text-gray-600 mb-2">No posts found</h3>
-                    <p className="text-gray-500">Try adjusting your search or browse a different category</p>
+                <div className="py-16 text-gray-500">
+                    <p>No posts yet in this category. Check back soon!</p>
                 </div>
             )}
         </section>
