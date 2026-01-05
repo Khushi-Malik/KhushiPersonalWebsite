@@ -1,15 +1,15 @@
 
 
 export const personalBlogs = [
-    // {
-    //     id: 1,
-    //     title: "My Journey into Machine Learning",
-    //     excerpt: "Reflecting on the challenges and discoveries I've made while diving deep into ML algorithms and their real-world applications.",
-    //     date: "",
-    //     readTime: "x min read",
-    //     tags: ["Personal", "Machine Learning", "Journey"],
-    //     category: "personal"
-    // },
+    {
+        id: 1,
+        title: "From 2025, Onto 2026",
+        excerpt: "Reflecting on my journey through 2025 and setting aspirations for the year ahead.",
+        date: "",
+        readTime: "8 min read",
+        tags: ["Personal", "Reflection"],
+        category: "personal"
+    },
     // {
     //     id: 2,
     //     title: "Building My First iOS App: Lessons Learned",
