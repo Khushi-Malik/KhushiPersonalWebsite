@@ -89,7 +89,7 @@ export const WorkExperiences = [
         company_name: "Savi Finance",
         icon: savifinance,
         iconBg: "#accbe1",
-        date: "September 2025 - present",
+        date: "September 2025 - December 2025",
         points: [
             "Developing and deploying AI-powered workflow automation systems enabling agent-to-human communication by implementing APIs, CRUD operations, and production-ready pipelines for task automations."
         ],
@@ -303,6 +303,24 @@ export const VolunteeringExperiences = [
     },
 ];
 export const Publications = [
+    {
+      title: "Analysis of Motivations in Machine Learning Textbooks",
+      authors: "Khushi Malik, Amber Richardson, Tingting Zhu, Lisa Zhang",
+      venue: "EAAI-26: The 16th Symposium on Educational Advances in Artificial Intelligence",
+      year: "2026",
+      link: "",
+    //   doi: "https://doi.org/10.1145/3769994.3770054",
+      type: "Journal Article"
+    },
+    {
+      title: "Interests and Challenges in Machine Learning: Differences by Gender, Prior Experience, and First Generation Status",
+      authors: "Amber Richardson, Khushi Malik, Saayna Halder, Fatima Ahmed, Lisa Zhang",
+      venue: "Proceedings of the 25th Koli Calling International Conference on Computing Education Research (Koli)",
+      year: "2025",
+      link: "https://doi.org/10.1145/3769994.3770054",
+    //   doi: "https://doi.org/10.1145/3769994.3770054",
+      type: "Conference Poster"
+    },
     {
       title: "Interactive Effects of Prior Experience and Gender on Self-Efficacy and Achievement in CS1",
       authors: "Khushi Malik, Amber Richardson, Michelle Craig, Andrew Petersen",
