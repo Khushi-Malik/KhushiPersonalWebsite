@@ -146,17 +146,21 @@ const Projects = () => {
       <div className="flex justify-between max-w-md mx-auto mb-12">
         <button
           onClick={() => setActiveTab('personal')}
-          className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-            activeTab === 'personal' ? 'bg-[#6FE3F0] text-gray-900 shadow-md' : 'text-gray-600 hover:text-gray-900'
+          className={`pb-3 font-medium transition-colors ${
+              activeTab === 'personal' 
+                  ? 'text-gray-900 border-b-2 border-gray-900' 
+                  : 'text-gray-500 hover:text-gray-900'
           }`}
         >
           {/* Personal Projects ({MyProjects.length}) */}
           Personal Projects
         </button>
         <button
-          onClick={() => setActiveTab('school')}
-          className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-            activeTab === 'school' ? 'bg-[#6FE3F0] text-gray-900 shadow-md' : 'text-gray-600 hover:text-gray-900'
+          onClick={() => setActiveTab('personal')}
+          className={`pb-3 font-medium transition-colors ${
+              activeTab === 'personal' 
+                  ? 'text-gray-900 border-b-2 border-gray-900' 
+                  : 'text-gray-500 hover:text-gray-900'
           }`}
         >
           {/* School Projects ({SchoolProjects.length}) */}
