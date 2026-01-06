@@ -111,24 +111,24 @@ import React from 'react'
 import { achievements } from '../constants'
 
 const Achievement = () => {
-  // Subtle rainbow colors for left border
+  // Subtle rainbow colors
   const colors = [
-    'border-l-red-400',
-    'border-l-orange-400',
-    'border-l-yellow-400',
-    'border-l-green-400',
-    'border-l-blue-400',
-    'border-l-indigo-400',
-    'border-l-purple-400',
-    'border-l-pink-400'
+    { border: 'border-l-red-400', bg: 'bg-red-50/50' },
+    { border: 'border-l-orange-400', bg: 'bg-orange-50/50' },
+    { border: 'border-l-yellow-400', bg: 'bg-yellow-50/50' },
+    { border: 'border-l-green-400', bg: 'bg-green-50/50' },
+    { border: 'border-l-blue-400', bg: 'bg-blue-50/50' },
+    { border: 'border-l-indigo-400', bg: 'bg-indigo-50/50' },
+    { border: 'border-l-purple-400', bg: 'bg-purple-50/50' },
+    { border: 'border-l-pink-400', bg: 'bg-pink-50/50' }
   ];
 
   return (
     <section className='max-container'>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="head-text mb-4">
+        <div className="text-center mb-12">
+          <h1 className="head-text mb-6">
             Achievements
           </h1>
           <p className="text-gray-600">
@@ -136,42 +136,46 @@ const Achievement = () => {
           </p>
         </div>
 
-        {/* List with rainbow left borders */}
+        {/* List with rainbow accents */}
         <div className="space-y-6">
-          {achievements.map((achievement, index) => (
-            <div
-              key={index}
-              className={`border-l-4 ${colors[index % colors.length]} pl-6 py-4 hover:bg-gray-50 transition-colors`}
-            >
-              <div className="flex justify-between items-start mb-2">
-                <div>
-                  <h2 className="text-xl font-medium text-gray-900 mb-1">
-                    {achievement.title}
-                  </h2>
-                  <p className="text-gray-600">
-                    {achievement.institution}
-                  </p>
+          {achievements.map((achievement, index) => {
+            const colorScheme = colors[index % colors.length];
+            
+            return (
+              <div
+                key={index}
+                className={`border-l-4 ${colorScheme.border} ${colorScheme.bg} rounded-r-lg p-6 hover:shadow-md transition-all duration-200`}
+              >
+                <div className="flex justify-between items-start mb-3">
+                  <div className="flex-1">
+                    <h2 className="text-xl font-medium text-gray-900 mb-1">
+                      {achievement.title}
+                    </h2>
+                    <p className="text-gray-600 font-medium">
+                      {achievement.institution}
+                    </p>
+                  </div>
+                  <span className="text-sm text-gray-500 px-3 py-1 bg-white rounded-full">
+                    {achievement.year}
+                  </span>
                 </div>
-                <span className="text-sm text-gray-500">
-                  {achievement.year}
-                </span>
-              </div>
-              
-              <p className="text-gray-600 leading-relaxed mb-2">
-                {achievement.details}
-              </p>
+                
+                <p className="text-gray-600 leading-relaxed mb-3">
+                  {achievement.details}
+                </p>
 
-              <div className="flex gap-4 text-sm text-gray-500">
-                {achievement.value && <span>{achievement.value}</span>}
-                {achievement.category && (
-                  <>
-                    <span>·</span>
-                    <span className="capitalize">{achievement.category}</span>
-                  </>
-                )}
+                <div className="flex gap-4 text-sm text-gray-500">
+                  {achievement.value && <span className="font-medium">{achievement.value}</span>}
+                  {achievement.category && (
+                    <>
+                      <span>·</span>
+                      <span className="capitalize">{achievement.category}</span>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

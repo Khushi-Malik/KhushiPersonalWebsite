@@ -75,8 +75,8 @@ const Blog = () => {
 
     return (
         <section className='max-container'>
-            <div className="mb-12 justify-center text-center">
-                <h1 className="head-text mb-4 ">
+            <div className="text-center mb-12">
+                <h1 className="head-text mb-6 ">
                     Writing
                 </h1>
                 <p className="text-gray-600 max-w-2xl">
