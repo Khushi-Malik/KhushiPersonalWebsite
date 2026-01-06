@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { personalBlogs, researchPapers, educationalBlogs } from '../blogs';
+import { Link } from 'react-router-dom'; 
 
 const BlogCard = ({ post, type = "blog" }) => {
     return (
