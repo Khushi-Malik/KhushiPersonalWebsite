@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { personalBlogs, researchPapers, educationalBlogs } from '../blog-content/blogs';
+import { personalBlogs, researchPapers, educationalBlogs } from '../blogs';
 
 const BlogCard = ({ post, type = "blog" }) => {
     return (

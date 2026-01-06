@@ -8,22 +8,24 @@ const BlogPost = () => {
     const [content, setContent] = useState('');
     const [loading, setLoading] = useState(true);
     
-    // Combine all blogs and find the one with matching id
     const allBlogs = [...personalBlogs, ...educationalBlogs, ...researchPapers];
     const post = allBlogs.find(p => p.id === parseInt(id));
 
     useEffect(() => {
         if (post && post.contentFile) {
-            // Load the markdown file
-            import(`../content/blogs/${post.contentFile}`)
-                .then(res => fetch(res.default))
-                .then(res => res.text())
+            // Fetch from public folder
+            fetch(`/blogs/${post.contentFile}`)
+                .then(res => {
+                    if (!res.ok) throw new Error('Failed to load blog content');
+                    return res.text();
+                })
                 .then(text => {
                     setContent(text);
                     setLoading(false);
                 })
                 .catch(err => {
                     console.error('Error loading blog content:', err);
+                    setContent('Failed to load blog content.');
                     setLoading(false);
                 });
         } else {
