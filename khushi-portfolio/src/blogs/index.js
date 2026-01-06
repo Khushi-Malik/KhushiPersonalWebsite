@@ -1,5 +1,3 @@
-
-
 export const personalBlogs = [
     {
         id: 1,
