@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { personalBlogs, researchPapers, educationalBlogs } from '../blogs';
+import { personalBlogs, researchPapers, educationalBlogs } from '../blog-content/blogs';
 
 const BlogCard = ({ post, type = "blog" }) => {
     return (
@@ -10,9 +10,11 @@ const BlogCard = ({ post, type = "blog" }) => {
                 </span>
             </div>
             
-            <h2 className="text-xl font-medium text-gray-900 mb-2 hover:text-gray-600 transition-colors cursor-pointer">
-                {post.title}
-            </h2>
+            <Link to={`/blog/${post.id}`}>
+                <h2 className="text-xl font-medium text-gray-900 mb-2 hover:text-gray-600 transition-colors cursor-pointer">
+                    {post.title}
+                </h2>
+            </Link>
 
             {type === "research" && (
                 <div className="mb-2 text-sm text-gray-600">

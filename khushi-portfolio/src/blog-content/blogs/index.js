@@ -5,20 +5,12 @@ export const personalBlogs = [
         id: 1,
         title: "From 2025, Onto 2026",
         excerpt: "Reflecting on my journey through 2025 and setting aspirations for the year ahead.",
-        date: "",
+        date: "2025-01-05",
         readTime: "8 min read",
         tags: ["Personal", "Reflection"],
-        category: "personal"
+        category: "personal",
+        contentFile: "from-2025-onto-2026.md"  // Added this
     },
-    // {
-    //     id: 2,
-    //     title: "Building My First iOS App: Lessons Learned",
-    //     excerpt: "The ups and downs of developing HabitBreaker, from initial concept to App Store submission.",
-    //     date: "2024-05-10",
-    //     readTime: "x min read",
-    //     tags: ["Personal", "iOS", "Development"],
-    //     category: "personal"
-    // }
 ];
 
 export const educationalBlogs = [
