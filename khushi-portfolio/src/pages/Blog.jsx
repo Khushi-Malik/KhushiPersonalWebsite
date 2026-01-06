@@ -92,7 +92,7 @@ const Blog = () => {
                 />
             </div>
 
-            <div className="flex gap-6 mb-12 border-b border-gray-200">
+            <div className="flex gap-6 mb-12 border-b border-gray-200 justify-center">
                 <button
                     onClick={() => setActiveTab('personal')}
                     className={`pb-3 font-medium transition-colors ${

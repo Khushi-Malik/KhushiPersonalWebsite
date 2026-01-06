@@ -143,7 +143,7 @@ const Projects = () => {
       </div>
 
       {/* Simple Tabs */}
-      <div className="flex justify-between max-w-md mx-auto mb-12">
+      <div className="flex gap-8 mb-12 border-b border-gray-200 justify-center">
         <button
           onClick={() => setActiveTab('personal')}
           className={`pb-3 font-medium transition-colors ${
@@ -152,22 +152,19 @@ const Projects = () => {
                   : 'text-gray-500 hover:text-gray-900'
           }`}
         >
-          {/* Personal Projects ({MyProjects.length}) */}
           Personal Projects
         </button>
         <button
-          onClick={() => setActiveTab('personal')}
+          onClick={() => setActiveTab('school')}
           className={`pb-3 font-medium transition-colors ${
-              activeTab === 'personal' 
+              activeTab === 'school' 
                   ? 'text-gray-900 border-b-2 border-gray-900' 
                   : 'text-gray-500 hover:text-gray-900'
           }`}
         >
-          {/* School Projects ({SchoolProjects.length}) */}
           School Projects
         </button>
       </div>
-
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
