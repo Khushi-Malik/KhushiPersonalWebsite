@@ -74,18 +74,21 @@ const Blog = () => {
     );
 
     return (
-        <section className='max-container'>
+         <section className="max-container">
+        {/* Header */}
             <div className="text-center mb-12">
-                <h1 className="head-text mb-6 ">
+                <h1 className="head-text mb-6">
                     Writing
                 </h1>
-                <p className="text-gray-600 max-w-2xl">
+                 <div className="max-w-2xl mx-auto">
+                <p className="text-gray-600 leading-relaxed mb-4">
                     Thoughts on technology, personal experiences, and research papers I find interesting. 
                     More content coming soon.
                 </p>
+                </div>
             </div>
 
-            <div className="max-w-xl mb-8">
+            <div className="max-w-xl mb-8 justify-center">
                 <input
                     type="text"
                     placeholder="Search..."
