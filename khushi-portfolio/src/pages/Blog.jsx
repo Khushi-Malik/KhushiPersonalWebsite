@@ -91,16 +91,16 @@ const Blog = () => {
 
     return (
          <section className="max-container">
-        {/* Header */}
+            {/* Header */}
             <div className="text-center mb-12">
                 <h1 className="head-text mb-6">
                     Writing
                 </h1>
-                 <div className="max-w-2xl mx-auto">
-                <p className="text-gray-600 leading-relaxed mb-4">
-                    Thoughts on technology, personal experiences, and research papers I find interesting. 
-                    More content coming soon.
-                </p>
+                <div className="max-w-2xl mx-auto">
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                        Thoughts on technology, personal experiences, and research papers I find interesting. 
+                        More content coming soon.
+                    </p>
                 </div>
             </div>
 
@@ -163,7 +163,7 @@ const Blog = () => {
             </div>
 
             {filteredPosts.length > 0 ? (
-                <div className="max-w-3xl mx-auto">
+                <div className="max-w-3xl mx-auto text-left">
                     {filteredPosts.map((post) => (
                         <BlogCard 
                             key={post.id} 
