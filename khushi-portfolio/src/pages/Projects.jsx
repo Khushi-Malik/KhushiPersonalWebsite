@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import { MyProjects, SchoolProjects } from '../constants';
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project }) => {
   const getCategoryColor = (category) => {
     switch (category) {
       case 'AI':
