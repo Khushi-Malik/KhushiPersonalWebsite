@@ -7,7 +7,7 @@ export const personalBlogs = [
         readTime: "8 min read",
         tags: ["Personal", "Reflection"],
         category: "personal",
-        contentFile: "from-2025-onto-2026.md"  // Added this
+        contentFile: "blog-1-from-2025-onto-2026.md"  // Added this
     },
 ];
 
