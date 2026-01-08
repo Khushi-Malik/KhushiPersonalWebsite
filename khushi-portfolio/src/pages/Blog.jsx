@@ -56,6 +56,7 @@ const BlogCard = ({ post, type = "blog" }) => {
 
 const Blog = () => {
     const [activeTab, setActiveTab] = useState('personal');
+    const [searchInput, setSearchInput] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
 
     const getCurrentPosts = () => {
@@ -64,6 +65,16 @@ const Blog = () => {
             case 'educational': return educationalBlogs;
             case 'research': return researchPapers;
             default: return personalBlogs;
+        }
+    };
+
+    const handleSearch = () => {
+        setSearchTerm(searchInput);
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
         }
     };
 
@@ -88,14 +99,21 @@ const Blog = () => {
                 </div>
             </div>
 
-            <div className="max-w-xl mb-8 justify-center">
+            <div className="max-w-xl mx-auto mb-8 flex gap-2">
                 <input
                     type="text"
                     placeholder="Search..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-2 border-b border-gray-300 focus:outline-none focus:border-gray-900 transition-colors"
+                    value={searchInput}
+                    onChange={(e) => setSearchInput(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    className="flex-1 px-4 py-2 border-b border-gray-300 focus:outline-none focus:border-gray-900 transition-colors"
                 />
+                <button
+                    onClick={handleSearch}
+                    className="px-6 py-2 bg-gray-900 text-white rounded hover:bg-gray-800 transition-colors"
+                >
+                    Search
+                </button>
             </div>
 
             <div className="flex gap-6 mb-12 border-b border-gray-200 justify-center">
@@ -132,7 +150,7 @@ const Blog = () => {
             </div>
 
             {filteredPosts.length > 0 ? (
-                <div className="max-w-3xl">
+                <div className="max-w-3xl mx-auto">
                     {filteredPosts.map((post) => (
                         <BlogCard 
                             key={post.id} 
@@ -142,7 +160,7 @@ const Blog = () => {
                     ))}
                 </div>
             ) : (
-                <div className="py-16 text-gray-500">
+                <div className="py-16 text-gray-500 text-center">
                     <p>No posts yet in this category. Check back soon!</p>
                 </div>
             )}
