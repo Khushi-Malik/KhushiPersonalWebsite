@@ -27,7 +27,7 @@ gcc -fsanitize=address program.c         # Memory errors
 gcc -fsanitize=undefined program.c       # UB detection
 ```
 
-<img width="571" height="163" alt="image" src="https://github.com/user-attachments/assets/792896c5-2b85-4e63-802b-459c846dd8ed" />
+<img width="571" height="163" alt="image" src="../assets/blog-2/image1.png" />
 
 
 **Compilation Pipeline**: Preprocessing → Compilation → Assembly → Linking
@@ -78,6 +78,11 @@ free(p);                             // Deallocate
 ```
 In higher programming languages, garbage collector frees up memory when the object is no longer in use. But in C, the garbage collector does not exist.
 
+Size of C primitives:
+
+<img width="411" height="189" alt="image" src="../assets/blog-2/image2.png" />
+
+
 **Critical Rules**:
 - Always check for NULL after allocation
 - Free exactly once per allocation
@@ -101,17 +106,48 @@ C makes no guarantees when:
 
 **Detection**: Use `-fsanitize=address`, `-fsanitize=undefined`, valgrind
 
-Size of C primitives:
+---
 
-<img width="411" height="189" alt="image" src="https://github.com/user-attachments/assets/19c920aa-e87d-4951-afa0-64751ee0759d" />
+## Command Line Arguments
+```c
+int main(int argc, char *argv[]) {
+    // argc = number of args (including program name)
+    // argv[0] = program name
+    // argv[1]...argv[argc-1] = arguments
+    // argv[argc] = NULL
+    
+    if (argc < 2) {
+        fprintf(stderr, "Usage: %s <file>\n", argv[0]);
+        exit(1);
+    }
+    
+    // Parse integer
+    long num = strtol(argv[1], &endptr, 10);
+}
+```
+## Macros
+```c
+#define MAX_SIZE 1000
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
 
+// Conditional
+#ifdef DEBUG
+    printf("debug\n");
+#endif
+
+#if defined(LINUX)
+    // Linux code
+#elif defined(MACOS)
+    // macOS code
+#endif
+```
 ---
 ## Strings and Memory Safety
 - Contiguous memory spaces where the null character (\0) indicates the termination of the string.
 - `string.h` is the standard string library that offers string manipulation.
 
-<img width="1140" height="516" alt="image" src="https://github.com/user-attachments/assets/87f00156-f64f-47ab-a7d7-b2cb566bbdbe" />
-<img width="632" height="474" alt="image" src="https://github.com/user-attachments/assets/079f16af-acc2-43cf-b0d5-06c7ce30762e" />
+<img width="1140" height="516" alt="image" src="../assets/blog-2/image3.png" />
+<img width="632" height="474" alt="image" src="../assets/blog-2/image4.png" />
 
 ### Safe String Functions
 ```c
@@ -131,6 +167,33 @@ snprintf(buf, sizeof(buf), "fmt %d", x); // Safe format
 - `fgets()` includes newline if present
 
 ---
+
+### Structures
+```c
+struct person {
+    char name[50];
+    int age;
+};
+
+struct person p = {"Alice", 30};
+p.age = 31;
+
+struct person *pp = &p;
+pp->age = 32;  // Arrow notation for pointers
+
+// Returning from functions
+struct person create() {
+    struct person p = {"Bob", 25};
+    return p;  // Copies entire structure
+}
+
+// Dynamic allocation
+struct person *p = malloc(sizeof(struct person));
+free(p);
+```
+
+**Padding**: Structures aligned for efficiency. Order members by size to minimize padding.
+
 
 ## Pointers and Arrays
 **POINTER**: A variable that contains the memory address of another variable.
@@ -190,7 +253,7 @@ cd -                # Previous directory
   - Data structure containing information about a file – access permissions, size, timestamps, disk location, link count, etc.
   - Does NOT contain filename (stored in directory entry)
   
-<img width="613" height="404" alt="image" src="https://github.com/user-attachments/assets/b6561ef0-78d3-41c8-ad3e-0dce940fef3c" />
+<img width="613" height="404" alt="image" src="../assets/blog-2/image5.png" />
 
 
 ```bash
@@ -200,7 +263,7 @@ stat filename       # Detailed inode info
 
 ### File Permissions
 
-<img width="385" height="122" alt="image" src="https://github.com/user-attachments/assets/d3f1dcc1-b56e-4d16-b960-b47998c342e7" />
+<img width="385" height="122" alt="image" src="../assets/blog-2/image6.png" />
 
 - The three categories– the files user, the owning group, and all other users
 
@@ -224,6 +287,17 @@ For directories:
 stdin   (fd 0)  - keyboard
 stdout  (fd 1)  - terminal
 stderr  (fd 2)  - terminal
+```
+
+### Common File Flags
+```
+O_RDONLY   - Read only
+O_WRONLY   - Write only
+O_RDWR     - Read and write
+O_CREAT    - Create if doesn't exist
+O_TRUNC    - Truncate to 0
+O_APPEND   - Append mode
+O_EXCL     - Fail if exists (with O_CREAT)
 ```
 
 Using a file:
@@ -300,7 +374,7 @@ When can fork() fail?
 
 A process exit status is returned back to the parent process via wait/waitpid. If the program exits it contains its low order 8 bits.
 
-<img width="571" height="167" alt="image" src="https://github.com/user-attachments/assets/aa9da7e8-a85a-48e1-a913-71057495e168" />
+<img width="571" height="167" alt="image" src="../assets/blog-2/image7.png" />
 
 Inside main, return and exit almost same, the return value of main is the exit status passed to exit()
 - exit() performs some cleanup, flush stdio streams and calls _exit
@@ -363,6 +437,14 @@ if (WIFSIGNALED(status)) {
 }
 ```
 
+**Wait Status Macros**
+```
+WIFEXITED(status)    - Normal exit?
+WEXITSTATUS(status)  - Exit code
+WIFSIGNALED(status)  - Killed by signal?
+WTERMSIG(status)     - Signal number
+```
+
 ### Zombie and Orphan Processes
 - **Zombie**: Child exited but parent hasn't called wait() (shows as `<defunct>`)
 - **Orphan**: Parent died before child; init adopts and reaps
@@ -370,7 +452,7 @@ if (WIFSIGNALED(status)) {
 ### exec() Family
 Replaces current process image with new program.
 
-<img width="586" height="258" alt="image" src="https://github.com/user-attachments/assets/c0ebf18c-7e8b-498e-81bb-0dc55602af92" />
+<img width="586" height="258" alt="image" src="../assets/blog-2/image8.png" />
 
 
 ```c
@@ -474,7 +556,7 @@ close(fd);
 - **System-wide open file table**: File offset, access mode, refcount
 - **Inode table**: File metadata
 
-  <img width="625" height="461" alt="image" src="https://github.com/user-attachments/assets/87ab6b19-ffd0-4ef0-8732-5d3ee2f5ec32" />
+  <img width="625" height="461" alt="image" src="../assets/blog-2/image9.png" />
 
 After fork(), child's FD table is copy but points to same open file entries → **shared file offset**.
 
@@ -628,15 +710,21 @@ if (fd == -1) {
 }
 ```
 
-**Common errno values**: EACCES, ENOENT, EINTR, EINVAL, ENOMEM, EPIPE
+**Common errno Values**
+```
+EACCES  - Permission denied
+EAGAIN  - Try again
+EBADF   - Bad file descriptor
+EEXIST  - File exists
+EINTR   - Interrupted
+EINVAL  - Invalid argument
+ENOENT  - No such file
+ENOMEM  - Out of memory
+```
 
 **Always check return values** from system calls.
 
----
-
-## Advanced Topics
-
-### Bitwise Operations
+## Bitwise Operations
 ```c
 x << n      // Left shift (multiply by 2^n)
 x >> n      // Right shift (divide by 2^n)
@@ -652,68 +740,7 @@ value ^= (1 << n);      // Toggle bit n
 if (value & (1 << n))   // Test bit n
 ```
 
-### Structures
-```c
-struct person {
-    char name[50];
-    int age;
-};
-
-struct person p = {"Alice", 30};
-p.age = 31;
-
-struct person *pp = &p;
-pp->age = 32;  // Arrow notation for pointers
-
-// Returning from functions
-struct person create() {
-    struct person p = {"Bob", 25};
-    return p;  // Copies entire structure
-}
-
-// Dynamic allocation
-struct person *p = malloc(sizeof(struct person));
-free(p);
-```
-
-**Padding**: Structures aligned for efficiency. Order members by size to minimize padding.
-
-### Macros
-```c
-#define MAX_SIZE 1000
-#define MAX(a,b) ((a) > (b) ? (a) : (b))
-
-// Conditional
-#ifdef DEBUG
-    printf("debug\n");
-#endif
-
-#if defined(LINUX)
-    // Linux code
-#elif defined(MACOS)
-    // macOS code
-#endif
-```
-
-### Command Line Arguments
-```c
-int main(int argc, char *argv[]) {
-    // argc = number of args (including program name)
-    // argv[0] = program name
-    // argv[1]...argv[argc-1] = arguments
-    // argv[argc] = NULL
-    
-    if (argc < 2) {
-        fprintf(stderr, "Usage: %s <file>\n", argv[0]);
-        exit(1);
-    }
-    
-    // Parse integer
-    long num = strtol(argv[1], &endptr, 10);
-}
-```
-
-### Makefiles
+## Makefiles
 ```makefile
 CC = gcc
 CFLAGS = -Wall -g
@@ -732,53 +759,3 @@ clean:
 # $@ = target, $^ = all deps, $< = first dep
 ```
 
-## Reference Tables
-
-### File Descriptor Numbers
-```
-0 - stdin
-1 - stdout
-2 - stderr
-3+ - user files
-```
-
-### Common File Flags
-```
-O_RDONLY   - Read only
-O_WRONLY   - Write only
-O_RDWR     - Read and write
-O_CREAT    - Create if doesn't exist
-O_TRUNC    - Truncate to 0
-O_APPEND   - Append mode
-O_EXCL     - Fail if exists (with O_CREAT)
-```
-
-### Common Signals
-```
-SIGINT  2  - Ctrl+C
-SIGKILL 9  - Force kill (uncatchable)
-SIGSEGV 11 - Segmentation fault
-SIGPIPE 13 - Broken pipe
-SIGTERM 15 - Termination request
-SIGCHLD 17 - Child status changed
-```
-
-### Wait Status Macros
-```
-WIFEXITED(status)    - Normal exit?
-WEXITSTATUS(status)  - Exit code
-WIFSIGNALED(status)  - Killed by signal?
-WTERMSIG(status)     - Signal number
-```
-
-### Common errno Values
-```
-EACCES  - Permission denied
-EAGAIN  - Try again
-EBADF   - Bad file descriptor
-EEXIST  - File exists
-EINTR   - Interrupted
-EINVAL  - Invalid argument
-ENOENT  - No such file
-ENOMEM  - Out of memory
-```
