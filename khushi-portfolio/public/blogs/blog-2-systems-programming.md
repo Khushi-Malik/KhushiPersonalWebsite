@@ -26,7 +26,7 @@ gcc -Wall -Wextra program.c              # Warnings
 gcc -fsanitize=address program.c         # Memory errors
 gcc -fsanitize=undefined program.c       # UB detection
 ```
-
+![image](../assets/blog-2/image1.png)
 <img width="571" height="163" alt="image" src="../assets/blog-2/image1.png" />
 
 
