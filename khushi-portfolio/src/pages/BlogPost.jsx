@@ -4,12 +4,34 @@ import ReactMarkdown from 'react-markdown';
 import { personalBlogs, researchPapers, educationalBlogs } from '../blogs';
 
 const BlogPost = () => {
-    const { id } = useParams();
+    const { id, category } = useParams();
     const [content, setContent] = useState('');
     const [loading, setLoading] = useState(true);
     
-    const allBlogs = [...personalBlogs, ...educationalBlogs, ...researchPapers];
-    const post = allBlogs.find(p => p.id === parseInt(id));
+    // Get the correct blog array based on category or search all
+    const getBlogFromCategory = () => {
+        const blogId = parseInt(id);
+        
+        if (category) {
+            // If category is specified in URL, search in that category
+            switch(category) {
+                case 'personal':
+                    return personalBlogs.find(p => p.id === blogId);
+                case 'educational':
+                    return educationalBlogs.find(p => p.id === blogId);
+                case 'research':
+                    return researchPapers.find(p => p.id === blogId);
+                default:
+                    return null;
+            }
+        } else {
+            // Fallback: search all blogs (for backwards compatibility)
+            const allBlogs = [...personalBlogs, ...educationalBlogs, ...researchPapers];
+            return allBlogs.find(p => p.id === blogId);
+        }
+    };
+    
+    const post = getBlogFromCategory();
 
     useEffect(() => {
         if (post && post.contentFile) {
@@ -54,6 +76,8 @@ const BlogPost = () => {
         );
     }
 
+    const isResearch = post.category === 'research' || category === 'research';
+
     return (
         <section className="max-container">
             <Link to="/blog" className="inline-block mb-8 text-gray-600 hover:text-gray-900">
@@ -63,7 +87,7 @@ const BlogPost = () => {
             <article className="max-w-3xl mx-auto">
                 <div className="mb-6">
                     <span className="text-xs uppercase tracking-wide text-gray-500">
-                        {post.category === 'research' ? 'Paper Review' : post.category}
+                        {post.category || category}
                     </span>
                 </div>
 
@@ -71,7 +95,7 @@ const BlogPost = () => {
                     {post.title}
                 </h1>
 
-                {post.category === 'research' && (
+                {isResearch && (
                     <div className="mb-4 text-gray-600">
                         <p className="font-medium">{post.authors}</p>
                         <p className="text-gray-500">{post.journal}</p>
@@ -92,7 +116,7 @@ const BlogPost = () => {
                     <ReactMarkdown>{content}</ReactMarkdown>
                 </div>
 
-                {post.category === 'research' && post.paperUrl && (
+                {isResearch && post.paperUrl && (
                     <div className="mt-8 pt-8 border-t border-gray-200">
                         <a
                             href={post.paperUrl}

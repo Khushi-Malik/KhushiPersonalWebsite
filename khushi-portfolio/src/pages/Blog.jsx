@@ -55,18 +55,19 @@ const BlogCard = ({ post, type = "blog" }) => {
 };
 
 const Blog = () => {
-    const [activeTab, setActiveTab] = useState('personal');
+    const [activeCategory, setActiveCategory] = useState('all');
     const [searchInput, setSearchInput] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
 
-    const getCurrentPosts = () => {
-        switch(activeTab) {
-            case 'personal': return personalBlogs;
-            case 'educational': return educationalBlogs;
-            case 'research': return researchPapers;
-            default: return personalBlogs;
-        }
-    };
+    // Combine all blogs into one array with category labels
+    const allBlogs = [
+        ...personalBlogs.map(blog => ({ ...blog, category: 'personal' })),
+        ...educationalBlogs.map(blog => ({ ...blog, category: 'educational' })),
+        ...researchPapers.map(blog => ({ ...blog, category: 'research' }))
+    ];
+
+    // Sort by date (newest first)
+    const sortedBlogs = allBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const handleSearch = () => {
         setSearchTerm(searchInput);
@@ -83,11 +84,16 @@ const Blog = () => {
         }
     };
 
-    const filteredPosts = getCurrentPosts().filter(post =>
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
+    // Filter by category and search term
+    const filteredPosts = sortedBlogs.filter(post => {
+        const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
+        const matchesSearch = searchTerm === '' || 
+            post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        return matchesCategory && matchesSearch;
+    });
 
     return (
          <section className="max-container">
@@ -131,9 +137,19 @@ const Blog = () => {
 
             <div className="flex gap-6 mb-12 border-b border-gray-200 justify-center">
                 <button
-                    onClick={() => setActiveTab('personal')}
+                    onClick={() => setActiveCategory('all')}
                     className={`pb-3 font-medium transition-colors ${
-                        activeTab === 'personal' 
+                        activeCategory === 'all' 
+                            ? 'text-gray-900 border-b-2 border-gray-900' 
+                            : 'text-gray-500 hover:text-gray-900'
+                    }`}
+                >
+                    All
+                </button>
+                <button
+                    onClick={() => setActiveCategory('personal')}
+                    className={`pb-3 font-medium transition-colors ${
+                        activeCategory === 'personal' 
                             ? 'text-gray-900 border-b-2 border-gray-900' 
                             : 'text-gray-500 hover:text-gray-900'
                     }`}
@@ -141,9 +157,9 @@ const Blog = () => {
                     Personal
                 </button>
                 <button
-                    onClick={() => setActiveTab('educational')}
+                    onClick={() => setActiveCategory('educational')}
                     className={`pb-3 font-medium transition-colors ${
-                        activeTab === 'educational' 
+                        activeCategory === 'educational' 
                             ? 'text-gray-900 border-b-2 border-gray-900' 
                             : 'text-gray-500 hover:text-gray-900'
                     }`}
@@ -151,9 +167,9 @@ const Blog = () => {
                     Educational
                 </button>
                 <button
-                    onClick={() => setActiveTab('research')}
+                    onClick={() => setActiveCategory('research')}
                     className={`pb-3 font-medium transition-colors ${
-                        activeTab === 'research' 
+                        activeCategory === 'research' 
                             ? 'text-gray-900 border-b-2 border-gray-900' 
                             : 'text-gray-500 hover:text-gray-900'
                     }`}
@@ -166,15 +182,14 @@ const Blog = () => {
                 <div className="max-w-3xl mx-auto text-left">
                     {filteredPosts.map((post) => (
                         <BlogCard 
-                            key={post.id} 
+                            key={`${post.category}-${post.id}`} 
                             post={post} 
-                            type={activeTab === 'research' ? 'research' : 'blog'} 
                         />
                     ))}
                 </div>
             ) : (
                 <div className="py-16 text-gray-500 text-center">
-                    <p>No posts yet in this category. Check back soon!</p>
+                    <p>No posts found. {activeCategory !== 'all' && 'Try selecting a different category or'} Clear your search to see all posts.</p>
                 </div>
             )}
         </section>
