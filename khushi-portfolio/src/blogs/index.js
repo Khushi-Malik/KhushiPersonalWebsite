@@ -13,7 +13,7 @@ export const personalBlogs = [
 
 export const educationalBlogs = [
     {
-        id: 1,
+        id: 2,
         title: "System's Programming Overview",
         excerpt: "Low-level programming concepts + C notes for overview",
         date: "2026-1-11",
