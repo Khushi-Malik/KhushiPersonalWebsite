@@ -17,7 +17,7 @@ export const educationalBlogs = [
         title: "System's Programming Overview",
         excerpt: "Low-level programming concepts + C",
         date: "2026-1-11",
-        readTime: " min read",
+        readTime: "60 min read",
         tags: ["Educational", "Low-level programming", "C", "bash"],
         category: "educational",
         contentFile: "blog-2-systems-programming.md"
