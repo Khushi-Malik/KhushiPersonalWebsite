@@ -1,5 +1,3 @@
-# Low-Level Programming & Systems Notes
-
 ## Why I am Writing This
 
 Over this week, I have been reviewing into low-level programming to get ready for my Operating Systems course. My review included C, Unix systems, memory, processes, and all the details that usually stay hidden behind higher-level abstractions.
