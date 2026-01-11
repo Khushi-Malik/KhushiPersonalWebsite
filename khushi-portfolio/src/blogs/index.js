@@ -3,7 +3,7 @@ export const personalBlogs = [
         id: 1,
         title: "From 2025, Onto 2026",
         excerpt: "Reflecting on my journey through 2025 and setting aspirations for the year ahead.",
-        date: "2025-01-05",
+        date: "2026-01-05",
         readTime: "8 min read",
         tags: ["Personal", "Reflection"],
         category: "personal",
@@ -12,15 +12,15 @@ export const personalBlogs = [
 ];
 
 export const educationalBlogs = [
-    // {
-    //     id: 4,
-    //     title: "Understanding Neural Networks: A Beginner's Guide",
-    //     excerpt: "Breaking down the complex concepts of neural networks into digestible explanations with practical examples.",
-    //     date: "",
-    //     readTime: "x min read",
-    //     tags: ["Educational", "Neural Networks", "AI"],
-    //     category: "educational"
-    // }
+    {
+        id: 1,
+        title: "System's Programming Overview",
+        excerpt: "Low-level programming concepts + C",
+        date: "2026-1-11",
+        readTime: "x min read",
+        tags: ["Educational", "Low-level programming", "C", "bash"],
+        category: "educational"
+    }
 ];
 
 export const researchPapers = [
