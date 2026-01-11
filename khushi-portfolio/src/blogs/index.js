@@ -5,7 +5,7 @@ export const personalBlogs = [
         excerpt: "Reflecting on my journey through 2025 and setting aspirations for the year ahead.",
         date: "2026-01-05",
         readTime: "8 min read",
-        tags: ["Personal", "Reflection"],
+        tags: ["Personal", "Reflection", "2025", "Goals", "university"],
         category: "personal",
         contentFile: "blog-1-from-2025-onto-2026.md"  // Added this
     },
@@ -15,10 +15,10 @@ export const educationalBlogs = [
     {
         id: 2,
         title: "System's Programming Overview",
-        excerpt: "",
+        excerpt: "A grounded, end-to-end review of systems programming concepts, covering C, Unix, memory management, processes, file systems, and inter-process communication—written as evolving notes to understand what happens beneath high-level abstractions.",
         date: "2026-1-11",
         readTime: "60 min read",
-        tags: ["Educational", "Low-level programming", "C", "bash"],
+        tags: ["Educational", "operating-systems", "systems-programming", "low-level-programming", "c-programming", "unix", "memory-management", "processes", "file-systems", "file-descriptors", "pipes", "signals", "debugging", "gcc", "bash", "makefile"],
         category: "educational",
         contentFile: "blog-2-systems-programming.md"
     }
