@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { personalBlogs, researchPapers, educationalBlogs } from '../blogs';
 
 const BlogPost = () => {
@@ -113,42 +112,8 @@ const BlogPost = () => {
                     <span>{post.readTime}</span>
                 </div>
 
-                <div className="prose prose-lg max-w-none prose-img:rounded-lg prose-img:shadow-lg prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-800">
-                    <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                            // Custom image renderer to ensure images load properly
-                            img: ({node, ...props}) => (
-                                <img 
-                                    {...props} 
-                                    className="max-w-full h-auto rounded-lg shadow-lg my-6"
-                                    loading="lazy"
-                                    onError={(e) => {
-                                        console.error('Image failed to load:', props.src);
-                                        e.target.style.display = 'none';
-                                    }}
-                                />
-                            ),
-                            // Style code blocks
-                            code: ({node, inline, className, children, ...props}) => {
-                                return inline ? (
-                                    <code className="bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-sm" {...props}>
-                                        {children}
-                                    </code>
-                                ) : (
-                                    <code className={`${className} block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto`} {...props}>
-                                        {children}
-                                    </code>
-                                );
-                            },
-                            // Style links
-                            a: ({node, ...props}) => (
-                                <a className="text-blue-600 hover:text-blue-800 underline" {...props} />
-                            ),
-                        }}
-                    >
-                        {content}
-                    </ReactMarkdown>
+                <div className="prose prose-lg max-w-none">
+                    <ReactMarkdown>{content}</ReactMarkdown>
                 </div>
 
                 {isResearch && post.paperUrl && (
