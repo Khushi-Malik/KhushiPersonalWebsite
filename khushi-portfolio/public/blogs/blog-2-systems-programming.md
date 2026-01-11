@@ -315,11 +315,10 @@ fclose(fp);
   fgets(buffer, 100, fp);
   ```
   - fgets stops when it reaches a newline, reads size-1, reaches EOF 
-     - `fgets()`:
-     ```c
+     - `fgets()`: fgets stops reading at a newline or end of file, storing what it read in s. If it reads a newline, that newline is stored. fgets reads at most size - 1 bytes and always null-terminates s.
+    ```c
      char *fgets(char *s, int size, FILE *stream);
      ```
-		fgets stops reading at a newline or end of file, storing what it read in s. If it reads a newline, that newline is stored. fgets reads at most size - 1 bytes and always null-terminates s.
 
 
 **Redirection**:
