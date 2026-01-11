@@ -1,5 +1,3 @@
-## Why I am Writing This
-
 Over this week, I have been reviewing into low-level programming to get ready for my Operating Systems course. My review included C, Unix systems, memory, processes, and all the details that usually stay hidden behind higher-level abstractions.
 
 These notes started as class notes and scratch explanations to myself—things I wrote down to slow my thinking and make sure I truly understood what was happening underneath the code I was writing. Over time, they grew into something more structured: a reference I kept returning to when debugging, reasoning about memory, or trying to explain systems behavior to myself.
