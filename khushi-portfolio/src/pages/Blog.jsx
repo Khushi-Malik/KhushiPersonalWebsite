@@ -1,23 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import { personalBlogs, researchPapers, educationalBlogs } from '../blogs';
 import { Link } from 'react-router-dom'; 
 
-const BlogCard = ({ post, type = "blog" }) => {
+const BlogCard = ({ post, searchTerm }) => {
+    const isResearch = post.category === 'research';
+    
+    // Highlight search terms in content
+    const getHighlightedText = (text) => {
+        if (!searchTerm || !text) return text;
+        
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        const parts = text.split(regex);
+        
+        return parts.map((part, i) => 
+            regex.test(part) ? <mark key={i} className="bg-yellow-200">{part}</mark> : part
+        );
+    };
+    
     return (
         <article className="py-6 border-b border-gray-200 last:border-b-0">
             <div className="mb-2">
                 <span className="text-xs uppercase tracking-wide text-gray-500">
-                    {post.category === 'research' ? 'Paper Review' : post.category}
+                    {post.category}
                 </span>
             </div>
             
-            <Link to={`/blog/${post.id}`}>
+            <Link to={`/blog/${post.category}/${post.id}`}>
                 <h2 className="text-xl font-medium text-gray-900 mb-2 hover:text-gray-600 transition-colors cursor-pointer">
-                    {post.title}
+                    {getHighlightedText(post.title)}
                 </h2>
             </Link>
 
-            {type === "research" && (
+            {isResearch && (
                 <div className="mb-2 text-sm text-gray-600">
                     <p>{post.authors}</p>
                     <p className="text-gray-500">{post.journal}</p>
@@ -25,8 +39,17 @@ const BlogCard = ({ post, type = "blog" }) => {
             )}
 
             <p className="text-gray-600 mb-3 leading-relaxed">
-                {post.excerpt}
+                {getHighlightedText(post.excerpt)}
             </p>
+            
+            {/* Show content preview if search term found in content */}
+            {searchTerm && post.contentPreview && post.contentPreview.toLowerCase().includes(searchTerm.toLowerCase()) && (
+                <div className="mb-3 text-sm text-gray-500 italic border-l-2 border-gray-300 pl-3">
+                    <p className="line-clamp-2">
+                        ...{getHighlightedText(post.contentPreview)}...
+                    </p>
+                </div>
+            )}
 
             <div className="flex items-center gap-4 text-sm text-gray-500">
                 {post.date && (
@@ -36,7 +59,7 @@ const BlogCard = ({ post, type = "blog" }) => {
                     </>
                 )}
                 <span>{post.readTime}</span>
-                {type === "research" && post.paperUrl && (
+                {isResearch && post.paperUrl && (
                     <>
                         <span>·</span>
                         <a
@@ -84,6 +107,8 @@ const Blog = () => {
                                 fullContent: content.toLowerCase(),
                                 contentPreview: preview
                             };
+                        } else {
+                            console.warn(`Failed to load ${blog.contentFile}: ${response.status}`);
                         }
                     } catch (error) {
                         console.error(`Error loading content for ${blog.title}:`, error);
