@@ -58,16 +58,49 @@ const Blog = () => {
     const [activeCategory, setActiveCategory] = useState('all');
     const [searchInput, setSearchInput] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
+    const [blogsWithContent, setBlogsWithContent] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Combine all blogs into one array with category labels
-    const allBlogs = [
-        ...personalBlogs.map(blog => ({ ...blog, category: 'personal' })),
-        ...educationalBlogs.map(blog => ({ ...blog, category: 'educational' })),
-        ...researchPapers.map(blog => ({ ...blog, category: 'research' }))
-    ];
+    // Load all blog contents on mount
+    useEffect(() => {
+        const loadAllBlogContents = async () => {
+            const allBlogs = [
+                ...personalBlogs.map(blog => ({ ...blog, category: 'personal' })),
+                ...educationalBlogs.map(blog => ({ ...blog, category: 'educational' })),
+                ...researchPapers.map(blog => ({ ...blog, category: 'research' }))
+            ];
 
-    // Sort by date (newest first)
-    const sortedBlogs = allBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+            const blogsWithContentPromises = allBlogs.map(async (blog) => {
+                if (blog.contentFile) {
+                    try {
+                        const response = await fetch(`/blogs/${blog.contentFile}`);
+                        if (response.ok) {
+                            const content = await response.text();
+                            // Get a preview (first 500 chars after title)
+                            const contentWithoutTitle = content.split('\n').slice(2).join('\n');
+                            const preview = contentWithoutTitle.substring(0, 500);
+                            return { 
+                                ...blog, 
+                                fullContent: content.toLowerCase(),
+                                contentPreview: preview
+                            };
+                        }
+                    } catch (error) {
+                        console.error(`Error loading content for ${blog.title}:`, error);
+                    }
+                }
+                return { ...blog, fullContent: '', contentPreview: '' };
+            });
+
+            const loadedBlogs = await Promise.all(blogsWithContentPromises);
+            // Sort by date (newest first)
+            const sortedBlogs = loadedBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+            setBlogsWithContent(sortedBlogs);
+            setLoading(false);
+        };
+
+        loadAllBlogContents();
+    }, []);
 
     const handleSearch = () => {
         setSearchTerm(searchInput);
@@ -84,16 +117,33 @@ const Blog = () => {
         }
     };
 
-    // Filter by category and search term
-    const filteredPosts = sortedBlogs.filter(post => {
+    // Filter by category and search term (including full content)
+    const filteredPosts = blogsWithContent.filter(post => {
         const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
-        const matchesSearch = searchTerm === '' || 
-            post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        if (!searchTerm) {
+            return matchesCategory;
+        }
+        
+        const searchLower = searchTerm.toLowerCase();
+        const matchesSearch = 
+            post.title.toLowerCase().includes(searchLower) ||
+            post.excerpt.toLowerCase().includes(searchLower) ||
+            post.fullContent.includes(searchLower) || // Search full content!
+            post.tags.some(tag => tag.toLowerCase().includes(searchLower));
         
         return matchesCategory && matchesSearch;
     });
+
+    if (loading) {
+        return (
+            <section className="max-container">
+                <div className="text-center py-16">
+                    <p className="text-gray-600">Loading blogs...</p>
+                </div>
+            </section>
+        );
+    }
 
     return (
          <section className="max-container">
@@ -113,7 +163,7 @@ const Blog = () => {
             <div className="max-w-xl mx-auto mb-8 flex gap-2">
                 <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder="Search titles, content, and tags..."
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
                     onKeyPress={handleKeyPress}
@@ -178,12 +228,19 @@ const Blog = () => {
                 </button>
             </div>
 
+            {searchTerm && (
+                <div className="max-w-3xl mx-auto mb-6 text-sm text-gray-600">
+                    Found {filteredPosts.length} result{filteredPosts.length !== 1 ? 's' : ''} for "{searchTerm}"
+                </div>
+            )}
+
             {filteredPosts.length > 0 ? (
                 <div className="max-w-3xl mx-auto text-left">
                     {filteredPosts.map((post) => (
                         <BlogCard 
                             key={`${post.category}-${post.id}`} 
-                            post={post} 
+                            post={post}
+                            searchTerm={searchTerm}
                         />
                     ))}
                 </div>
