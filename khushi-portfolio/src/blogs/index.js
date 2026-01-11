@@ -15,7 +15,7 @@ export const educationalBlogs = [
     {
         id: 2,
         title: "System's Programming Overview",
-        excerpt: "Low-level programming concepts + C notes for overview",
+        excerpt: "",
         date: "2026-1-11",
         readTime: "60 min read",
         tags: ["Educational", "Low-level programming", "C", "bash"],
