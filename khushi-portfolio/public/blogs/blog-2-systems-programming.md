@@ -27,7 +27,6 @@ gcc -fsanitize=address program.c         # Memory errors
 gcc -fsanitize=undefined program.c       # UB detection
 ```
 ![image](../assets/blog-2/image1.png)
-<img width="571" height="163" alt="image" src="../assets/blog-2/image1.png" />
 
 
 **Compilation Pipeline**: Preprocessing → Compilation → Assembly → Linking
@@ -80,7 +79,7 @@ In higher programming languages, garbage collector frees up memory when the obje
 
 Size of C primitives:
 
-<img width="411" height="189" alt="image" src="../assets/blog-2/image2.png" />
+![image](../assets/blog-2/image2.png)
 
 
 **Critical Rules**:
@@ -145,9 +144,8 @@ int main(int argc, char *argv[]) {
 ## Strings and Memory Safety
 - Contiguous memory spaces where the null character (\0) indicates the termination of the string.
 - `string.h` is the standard string library that offers string manipulation.
-
-<img width="1140" height="516" alt="image" src="../assets/blog-2/image3.png" />
-<img width="632" height="474" alt="image" src="../assets/blog-2/image4.png" />
+![image](../assets/blog-2/image3.png)
+![image](../assets/blog-2/image4.png)
 
 ### Safe String Functions
 ```c
@@ -253,7 +251,7 @@ cd -                # Previous directory
   - Data structure containing information about a file – access permissions, size, timestamps, disk location, link count, etc.
   - Does NOT contain filename (stored in directory entry)
   
-<img width="613" height="404" alt="image" src="../assets/blog-2/image5.png" />
+  ![image](../assets/blog-2/image5.png)
 
 
 ```bash
@@ -263,7 +261,7 @@ stat filename       # Detailed inode info
 
 ### File Permissions
 
-<img width="385" height="122" alt="image" src="../assets/blog-2/image6.png" />
+![image](../assets/blog-2/image6.png)
 
 - The three categories– the files user, the owning group, and all other users
 
@@ -374,7 +372,7 @@ When can fork() fail?
 
 A process exit status is returned back to the parent process via wait/waitpid. If the program exits it contains its low order 8 bits.
 
-<img width="571" height="167" alt="image" src="../assets/blog-2/image7.png" />
+![image](../assets/blog-2/image7.png)
 
 Inside main, return and exit almost same, the return value of main is the exit status passed to exit()
 - exit() performs some cleanup, flush stdio streams and calls _exit
@@ -452,7 +450,7 @@ WTERMSIG(status)     - Signal number
 ### exec() Family
 Replaces current process image with new program.
 
-<img width="586" height="258" alt="image" src="../assets/blog-2/image8.png" />
+![image](../assets/blog-2/image8.png)
 
 
 ```c
@@ -556,7 +554,7 @@ close(fd);
 - **System-wide open file table**: File offset, access mode, refcount
 - **Inode table**: File metadata
 
-  <img width="625" height="461" alt="image" src="../assets/blog-2/image9.png" />
+![image](../assets/blog-2/image9.png)
 
 After fork(), child's FD table is copy but points to same open file entries → **shared file offset**.
 
