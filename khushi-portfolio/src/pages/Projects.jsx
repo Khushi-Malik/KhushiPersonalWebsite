@@ -6,7 +6,7 @@ import { MyProjects, SchoolProjects } from '../constants';
 const ProjectCard = ({ project }) => {
   const getCategoryColor = (category) => {
     switch (category) {
-      case 'AI':
+      case 'AI/ML':
         return 'border-purple-400';
       case 'Web':
         return 'border-blue-400';
