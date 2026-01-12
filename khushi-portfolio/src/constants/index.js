@@ -167,9 +167,25 @@ export const socialLinks = [
 export const MyProjects = [
     {
         iconURL: null,
+        name: 'AI-Identities',
+        description: 'A black-box method for fingerprinting large language models using their observable output patterns.',
+        link: 'https://github.com/CSC392-CSC492-Building-AI-ML-systems/ai-identities',
+        tags: ['AI/ML', 'ML Algorithms', 'NLP', 'PCA'],
+        category: 'AI'
+    },
+    {
+        iconURL: null,
+        name: 'NeuTTS Express',
+        description: 'An open-source neural text-to-speech system enabling real-time, emotionally expressive voice cloning via neural codec compression.',
+        link: 'https://github.com/BarryFutureman/NeuTTS-Express',
+        tags: ['DL', 'TTS', 'Emotion', 'Speech Synthesis'],
+        category: 'AI'
+    },
+    {
+        iconURL: null,
         name: 'FixMyElo',
         description: 'Chess engine that explains its moves in natural language, helping players understand and improve their game.',
-        link: '',
+        link: 'https://github.com/Khushi-Malik',
         tags: ['AI/ML', 'Chess', 'NLP'],
         category: 'AI'
     },
@@ -189,22 +205,6 @@ export const MyProjects = [
         link: 'https://github.com/Khushi-Malik/HabitBreaker',
         tags: ['iOS', 'Mobile', 'Health'],
         category: 'Mobile'
-    },
-    {
-        iconURL: null,
-        name: 'AI-Identities',
-        description: 'A black-box method for fingerprinting large language models using their observable output patterns.',
-        link: '',
-        tags: ['AI/ML', 'ML Algorithms', 'NLP', 'PCA'],
-        category: 'AI'
-    },
-    {
-        iconURL: null,
-        name: 'NeuTTS Express',
-        description: 'An open-source neural text-to-speech system enabling real-time, emotionally expressive voice cloning via neural codec compression.',
-        link: '',
-        tags: ['DL', 'TTS', 'Emotion', 'Speech Synthesis'],
-        category: 'AI'
     },
     // {
     //     iconURL: null,
@@ -269,7 +269,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'MyShell',
         description: 'A robust custom shell implemented in C that supports everyday commands, piping, I/O redirection, background processes, signal handling, and networking.',
-        link: '',
+        link: 'https://github.com/Khushi-Malik',
         tags: ['C', 'Systems', 'Shell'],
         category: 'Systems'
     },
@@ -277,7 +277,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'Sokoban',
         description: 'A Sokoban game implemented in Assembly RISC-V language, featuring level loading, player movement, box pushing mechanics, win condition detection, and player leaderboard logic, all optimized for performance and memory usage.',
-        link: '',
+        link: 'https://github.com/Khushi-Malik',
         tags: ['RISC-V', 'Systems', 'Assembly'],
         category: 'Systems'
     },
@@ -285,7 +285,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'ML Predictor',
         description: 'A machine learning model that predicts the likelihood of a a dish being sushi, pizza, or shwarma based on real data obtained from human surveys.',
-        link: '',
+        link: 'https://github.com/Khushi-Malik',
         tags: ['ML', 'Python', 'Data Science'],
         category: 'AI'
     },
@@ -301,7 +301,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'Othello',
         description: 'A fully functional Java Othello game with a GUI, allowing two players to compete, featuring move validation, score tracking, and game-over detection.',
-        link: '',
+        link: 'https://github.com/Khushi-Malik',
         tags: ['Java', 'GUI', 'Game'],
         category: 'Games'
     },
@@ -309,7 +309,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'Directory- Memory Visualizer',
         description: 'A python program that visualizes the memory allocation of directories and files, providing insights into storage usage and organization.',
-        link: '',
+        link: 'https://github.com/Khushi-Malik',
         tags: ['Python', 'Visualization', 'Systems'],
         category: 'Tools'
     },
