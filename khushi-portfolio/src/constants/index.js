@@ -192,6 +192,30 @@ export const MyProjects = [
     },
     {
         iconURL: null,
+        name: 'AI-Identities',
+        description: 'A black-box method for fingerprinting large language models using their observable output patterns.',
+        link: '',
+        tags: ['AI/ML', 'ML Algorithms', 'NLP', 'PCA'],
+        category: 'AI'
+    },
+    {
+        iconURL: null,
+        name: 'NeuTTS Express',
+        description: 'An open-source neural text-to-speech system enabling real-time, emotionally expressive voice cloning via neural codec compression.',
+        link: '',
+        tags: ['DL', 'TTS', 'Emotion', 'Speech Synthesis'],
+        category: 'AI'
+    },
+    // {
+    //     iconURL: null,
+    //     name: 'Robotics',
+    //     description: '',
+    //     link: '',
+    //     tags: [''],
+    //     category: 'Hardware'
+    // },
+    {
+        iconURL: null,
         name: 'Deerography',
         description: 'A WebApp that help users discover geography facts about countries around the world through interactive quizzes and games.',
         link: 'https://github.com/Khushi-Malik/deerography',
