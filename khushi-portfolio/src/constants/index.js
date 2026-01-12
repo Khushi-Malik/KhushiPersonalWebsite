@@ -169,7 +169,7 @@ export const MyProjects = [
         iconURL: null,
         name: 'FixMyElo',
         description: 'Chess engine that explains its moves in natural language, helping players understand and improve their game.',
-        link: 'https://github.com/Khushi-Malik',
+        link: '',
         tags: ['AI/ML', 'Chess', 'NLP'],
         category: 'AI'
     },
@@ -186,7 +186,7 @@ export const MyProjects = [
         iconURL: null,
         name: 'HabitBreaker.',
         description: 'An iOS app that helps users break bad habits through personalized strategies and progress tracking.',
-        link: 'https://github.com/Khushi-Malik',
+        link: 'https://github.com/Khushi-Malik/HabitBreaker',
         tags: ['iOS', 'Mobile', 'Health'],
         category: 'Mobile'
     },
@@ -194,7 +194,7 @@ export const MyProjects = [
         iconURL: null,
         name: 'Deerography',
         description: 'A WebApp that help users discover geography facts about countries around the world through interactive quizzes and games.',
-        link: 'https://github.com/Khushi-Malik',
+        link: 'https://github.com/Khushi-Malik/deerography',
         tags: ['Web', 'Education', 'Games'],
         category: 'Web'
     },
@@ -202,9 +202,49 @@ export const MyProjects = [
         iconURL: null,
         name: 'WellRise',
         description: 'A 3d printer touch sensor clock and web application that help users track their sleep patterns and provides personalized recommendations for improving sleep quality.',
-        link: 'https://github.com/Khushi-Malik',
+        link: 'https://github.com/alebora/WellRise_Info',
         tags: ['IoT', '3D Printing', 'Health', 'Web'],
         category: 'Hardware'
+    },
+    {
+        iconURL: null,
+        name: 'Personal Website',
+        description: 'A modern, responsive portfolio website showcasing my projects, experiences, achievements, and writing.',
+        link: 'https://github.com/Khushi-Malik/KhushiPersonalWebsite',
+        tags: ['Personal Portfolio', 'Blogging', '3D Graphics', 'Web'],
+        category: 'Web'
+    },
+    {
+        iconURL: null,
+        name: 'Unhidden',
+        description: 'A minimalist blogging platform built with MongoDB, Express, React, Node.js. Features a clean interface, rich text editing with TinyMCE, and secure admin panel.',
+        link: 'https://github.com/Khushi-Malik/unhidden-website',
+        tags: ['Authentication', 'MERN', 'Web', 'API'],
+        category: 'Web'
+    },
+    {
+        iconURL: null,
+        name: 'Medicine Inventory Management System',
+        description: 'A command-line based inventory management system for medical stores to manage medicine stock, track sales, handle returns, and monitor expiry dates.',
+        link: 'https://github.com/Khushi-Malik/Good_Health_Medical_Records',
+        tags: ['Python', 'Binary Files'],
+        // category: ''
+    },
+    {
+        iconURL: null,
+        name: 'Medicine Inventory Management System',
+        description: 'A command-line based inventory management system for medical stores to manage medicine stock, track sales, handle returns, and monitor expiry dates.',
+        link: 'https://github.com/Khushi-Malik/Good_Health_Medical_Records',
+        tags: ['Python', 'Binary Files'],
+        // category: ''
+    },
+    {
+        iconURL: null,
+        name: 'Python-Automations',
+        description: 'A collection of Python scripts for automating tedious file manipulation tasks, saving time and reducing manual effort.',
+        link: 'https://github.com/Khushi-Malik/python-automations',
+        tags: ['Python', 'Automation', ],
+        category: 'Tools'
     },
 ];
 
@@ -213,7 +253,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'MyShell',
         description: 'A robust custom shell implemented in C that supports everyday commands, piping, I/O redirection, background processes, signal handling, and networking.',
-        link: 'https://github.com/Khushi-Malik',
+        link: '',
         tags: ['C', 'Systems', 'Shell'],
         category: 'Systems'
     },
@@ -221,7 +261,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'Sokoban',
         description: 'A Sokoban game implemented in Assembly RISC-V language, featuring level loading, player movement, box pushing mechanics, win condition detection, and player leaderboard logic, all optimized for performance and memory usage.',
-        link: 'https://github.com/Khushi-Malik',
+        link: '',
         tags: ['RISC-V', 'Systems', 'Assembly'],
         category: 'Systems'
     },
@@ -229,7 +269,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'ML Predictor',
         description: 'A machine learning model that predicts the likelihood of a a dish being sushi, pizza, or shwarma based on real data obtained from human surveys.',
-        link: 'https://github.com/Khushi-Malik',
+        link: '',
         tags: ['ML', 'Python', 'Data Science'],
         category: 'AI'
     },
@@ -237,7 +277,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'MyPaint AI',
         description: 'A java-based paint application with features like brush selection, color palette, and image saving with AI integration for image generation.',
-        link: 'https://github.com/Khushi-Malik',
+        link: 'https://github.com/Khushi-Malik/letsPaint',
         tags: ['Java', 'GUI', 'AI'],
         category: 'Desktop'
     },
@@ -245,7 +285,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'Othello',
         description: 'A fully functional Java Othello game with a GUI, allowing two players to compete, featuring move validation, score tracking, and game-over detection.',
-        link: 'https://github.com/Khushi-Malik',
+        link: '',
         tags: ['Java', 'GUI', 'Game'],
         category: 'Games'
     },
@@ -253,7 +293,7 @@ export const SchoolProjects = [
         iconURL: null,
         name: 'Directory- Memory Visualizer',
         description: 'A python program that visualizes the memory allocation of directories and files, providing insights into storage usage and organization.',
-        link: 'https://github.com/Khushi-Malik',
+        link: '',
         tags: ['Python', 'Visualization', 'Systems'],
         category: 'Tools'
     },
