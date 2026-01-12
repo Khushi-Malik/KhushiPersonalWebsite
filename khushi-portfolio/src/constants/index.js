@@ -177,7 +177,7 @@ export const MyProjects = [
         iconURL: null,
         name: 'CurAItor',
         description: 'WINNER OF GENAI: A WebApp that uses AI to generate personalized art tours in a 3d museum based on user preferences.',
-        link: 'https://github.com/Khushi-Malik',
+        link: 'https://github.com/Khushi-Malik/gen-ai-art-museum',
         tags: ['AI', '3D', 'Web', 'Award Winner'],
         category: 'AI',
         isWinner: true
@@ -228,15 +228,7 @@ export const MyProjects = [
         description: 'A command-line based inventory management system for medical stores to manage medicine stock, track sales, handle returns, and monitor expiry dates.',
         link: 'https://github.com/Khushi-Malik/Good_Health_Medical_Records',
         tags: ['Python', 'Binary Files'],
-        // category: ''
-    },
-    {
-        iconURL: null,
-        name: 'Medicine Inventory Management System',
-        description: 'A command-line based inventory management system for medical stores to manage medicine stock, track sales, handle returns, and monitor expiry dates.',
-        link: 'https://github.com/Khushi-Malik/Good_Health_Medical_Records',
-        tags: ['Python', 'Binary Files'],
-        // category: ''
+        category: 'Tools'
     },
     {
         iconURL: null,
