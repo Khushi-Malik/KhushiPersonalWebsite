@@ -171,7 +171,7 @@ export const MyProjects = [
         description: 'A black-box method for fingerprinting large language models using their observable output patterns.',
         link: 'https://github.com/CSC392-CSC492-Building-AI-ML-systems/ai-identities',
         tags: ['AI/ML', 'ML Algorithms', 'NLP', 'PCA'],
-        category: 'AI'
+        category: 'AI/ML'
     },
     {
         iconURL: null,
@@ -179,7 +179,7 @@ export const MyProjects = [
         description: 'An open-source neural text-to-speech system enabling real-time, emotionally expressive voice cloning via neural codec compression.',
         link: 'https://github.com/BarryFutureman/NeuTTS-Express',
         tags: ['DL', 'TTS', 'Emotion', 'Speech Synthesis'],
-        category: 'AI'
+        category: 'AI/ML'
     },
     {
         iconURL: null,
@@ -187,7 +187,7 @@ export const MyProjects = [
         description: 'Chess engine that explains its moves in natural language, helping players understand and improve their game.',
         link: 'https://github.com/Khushi-Malik',
         tags: ['AI/ML', 'Chess', 'NLP'],
-        category: 'AI'
+        category: 'AI/ML'
     },
     {
         iconURL: null,
@@ -195,7 +195,7 @@ export const MyProjects = [
         description: 'WINNER OF GENAI: A WebApp that uses AI to generate personalized art tours in a 3d museum based on user preferences.',
         link: 'https://github.com/Khushi-Malik/gen-ai-art-museum',
         tags: ['AI', '3D', 'Web', 'Award Winner'],
-        category: 'AI',
+        category: 'AI/ML',
         isWinner: true
     },
     {
@@ -204,7 +204,7 @@ export const MyProjects = [
         description: 'An iOS app that helps users break bad habits through personalized strategies and progress tracking.',
         link: 'https://github.com/Khushi-Malik/HabitBreaker',
         tags: ['iOS', 'Mobile', 'Health'],
-        category: 'Mobile'
+        category: 'AI/ML'
     },
     // {
     //     iconURL: null,
@@ -287,7 +287,7 @@ export const SchoolProjects = [
         description: 'A machine learning model that predicts the likelihood of a a dish being sushi, pizza, or shwarma based on real data obtained from human surveys.',
         link: 'https://github.com/Khushi-Malik',
         tags: ['ML', 'Python', 'Data Science'],
-        category: 'AI'
+        category: 'AI/ML'
     },
     {
         iconURL: null,
