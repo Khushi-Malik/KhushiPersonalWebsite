@@ -144,7 +144,8 @@ export const socialLinks = [
     {
         name: 'Resume',
         iconUrl: resume,
-        link: 'https://drive.google.com/file/d/1kMLHD1mX1G5OIzuf_Ok6gdOD7OT80Ayf/view?usp=sharing',
+        // link: 'https://drive.google.com/file/d/1kMLHD1mX1G5OIzuf_Ok6gdOD7OT80Ayf/view?usp=sharing',
+        link: 'https://drive.google.com/file/d/1jdMPQEuV2eRq1gwHjGdOpXFghbmeG6b8/view?usp=sharing',
     },
     {
         name: 'GitHub',
