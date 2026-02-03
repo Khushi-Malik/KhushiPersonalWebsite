@@ -42,9 +42,6 @@ After the presentation, people came up to talk to me. One person in particular s
 
 That was a moment where I truly felt like I belonged in the research space.
 
-<p align="center">
-  <img src="../assets/blog-3/image3.png" width="70%">
-</p>
 ![image](../assets/blog-3/image3.png)
 
 ### Experiencing Singapore 🇸🇬
@@ -55,16 +52,6 @@ We had limited time to explore after conference days ended at 6 p.m., but we mad
 
 One small lesson I learned: always carry some cash when traveling. Not having cash was the only thing that stopped me from trying mango sticky rice, which I have to save for next time! That said, I did find the best mango sorbet I have ever had at a famous ice cream shop near our hotel. Over the weekend, the line was massive, but on Monday night it was completely empty, perfect timing.
 
-| ![](../assets/blog-3/image2.png) | ![](../assets/blog-3/image1.png) |
-| --- | --- |
-
-| ![](../assets/blog-3/image4.png) | ![](../assets/blog-3/image5.png) | ![](../assets/blog-3/image6.png) |
-| --- | --- | --- |
-
-| ![](../assets/blog-3/image8.png) | ![](../assets/blog-3/image7.png) |
-| --- | --- |
-
-
 ### Looking back
 
 Compared to summer 2025, I feel noticeably more confident. I am more comfortable with public speaking, more certain that research is where I want to be, and more convinced that graduate school is the right next step for me. This trip also taught me that I’m better at handling myself than I used to think.
@@ -72,3 +59,10 @@ Compared to summer 2025, I feel noticeably more confident. I am more comfortable
 If I could tell my past self one thing, it would be this: *you are more capable than you think, trust the process.*
 
 I am excited to keep doing research, to keep traveling, and to keep growing. And yes, one of my 2026 goals is learning how to enjoy eating alone without losing my appetite 💀
+
+### Scenes from Singapore!
+
+![image](../assets/blog-3/image1.png)![image](../assets/blog-3/image2.png)
+![image](../assets/blog-3/image4.png) ![image](../assets/blog-3/image5.png)![image](../assets/blog-3/image6.png)
+![image](../assets/blog-3/image7.png)![image](../assets/blog-3/image8.png)
+
