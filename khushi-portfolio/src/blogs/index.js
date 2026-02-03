@@ -26,7 +26,7 @@ export const educationalBlogs = [
         id: 2,
         title: "System's Programming Overview",
         excerpt: "A grounded, end-to-end review of systems programming concepts, covering C, Unix, memory management, processes, file systems, and inter-process communication—written as evolving notes to understand what happens beneath high-level abstractions.",
-        date: "2026-1-11",
+        date: "2026-01-11",
         readTime: "60 min read",
         tags: ["Educational", "operating-systems", "systems-programming", "low-level-programming", "c-programming", "unix", "memory-management", "processes", "file-systems", "file-descriptors", "pipes", "signals", "debugging", "gcc", "bash", "makefile"],
         category: "educational",
