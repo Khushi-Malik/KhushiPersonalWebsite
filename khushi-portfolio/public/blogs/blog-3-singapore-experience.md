@@ -1,5 +1,4 @@
-## Conference in Singapore 🇸🇬  
-### Presenting at EAAI @ AAAI 2026, and my first solo trip
+ ### Presenting at EAAI @ AAAI 2026, and my first solo trip
 
 I started working on this research paper in the summer of 2025. At the time, I didn’t know where it would lead, I only knew that writing a paper is an intensive, often exhausting process, and that this was my **first time doing qualitative research**. The learning curve was steep. There was a lot of uncertainty, a lot of reading, and a lot of moments where I had to trust that things would eventually come together.
 
@@ -53,10 +52,9 @@ We had limited time to explore after conference days ended at 6 p.m., but we mad
 
 One small lesson I learned: always carry some cash when traveling. Not having cash was the only thing that stopped me from trying mango sticky rice, which I have to save for next time! That said, I did find the best mango sorbet I have ever had at a famous ice cream shop near our hotel. Over the weekend, the line was massive, but on Monday night it was completely empty, perfect timing.
 
-![image](../assets/blog-3/image2.png)
-![image](../assets/blog-3/image3.png)
-![image](../assets/blog-3/image4.png)
-![image](../assets/blog-3/image5.png)
+![image](../assets/blog-3/image2.png)![image](../assets/blog-3/image3.png)![image](../assets/blog-3/image7.png)
+![image](../assets/blog-3/image4.png)![image](../assets/blog-3/image5.png) ![image](../assets/blog-3/image6.png)![image](../assets/blog-3/image8.png)
+
 
 ### Looking back
 

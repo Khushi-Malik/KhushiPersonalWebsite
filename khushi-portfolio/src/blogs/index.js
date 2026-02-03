@@ -9,6 +9,16 @@ export const personalBlogs = [
         category: "personal",
         contentFile: "blog-1-from-2025-onto-2026.md"  // Added this
     },
+     {
+        id: 3,
+        title: "Conference in Singapore 🇸🇬 ",
+        excerpt: "First solo trip and presenting research at AAAI-2026!",
+        date: "2026-01-05",
+        readTime: "6 min read",
+        tags: ["AAAI 2026", "EAAI", "Undergraduate Research", "Machine Learning", "ML Education", "Qualitative Research", "Academic Conference", "Singapore", "Solo Travel", "First Solo Trip", "Research Presentation", "Personal Growth", "Graduate School", "Travel & Research"],
+        category: "personal",
+        contentFile: "blog-1-from-2025-onto-2026.md"  // Added this
+    },
 ];
 
 export const educationalBlogs = [
