@@ -31,7 +31,7 @@ const BlogCard = ({ post, type = "blog" }) => {
             <div className="flex items-center gap-4 text-sm text-gray-500">
                 {post.date && (
                     <>
-                        <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                        <span>{new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                         <span>·</span>
                     </>
                 )}
