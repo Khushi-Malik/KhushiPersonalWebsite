@@ -42,7 +42,7 @@ After the presentation, people came up to talk to me. One person in particular s
 
 That was a moment where I truly felt like I belonged in the research space.
 
-![image](../assets/blog-3/image1.png)
+![image](../assets/blog-3/image3.png)
 
 ### Experiencing Singapore 🇸🇬
 
@@ -52,7 +52,7 @@ We had limited time to explore after conference days ended at 6 p.m., but we mad
 
 One small lesson I learned: always carry some cash when traveling. Not having cash was the only thing that stopped me from trying mango sticky rice, which I have to save for next time! That said, I did find the best mango sorbet I have ever had at a famous ice cream shop near our hotel. Over the weekend, the line was massive, but on Monday night it was completely empty, perfect timing.
 
-![image](../assets/blog-3/image2.png)![image](../assets/blog-3/image3.png)![image](../assets/blog-3/image7.png)
+![image](../assets/blog-3/image2.png)![image](../assets/blog-3/image1.png)![image](../assets/blog-3/image7.png)
 ![image](../assets/blog-3/image4.png)![image](../assets/blog-3/image5.png) ![image](../assets/blog-3/image6.png)![image](../assets/blog-3/image8.png)
 
 
